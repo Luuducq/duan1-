@@ -9,7 +9,9 @@
    if(isset($_GET['act'])){
     $act=$_GET['act'];
     switch ($act) {
-     //danhmuc   
+     //danhmuc  
+       case 'add':
+       break;
         case 'adddm':
             // kiem tra xem ng dung co an nut hay k
             if(isset($_POST['themmoi'])&&($_POST['themmoi'])){
