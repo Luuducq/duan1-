@@ -11,8 +11,6 @@
  $spnew=loadall_sanpham_home();
  $dsdm=loadall_danhmuc();
  $dstop10=loadall_sanpham_top10();
-
-
  if((isset($_GET['act']))&&($_GET['act']!="")){
    $act=$_GET['act'];
    switch ($act) {
