@@ -14,6 +14,7 @@
 // xin chào mọi người 
 // đức đây
 // alooo son day
+// test part 2
 
  if((isset($_GET['act']))&&($_GET['act']!="")){
    $act=$_GET['act'];
