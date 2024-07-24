@@ -13,6 +13,7 @@
  $dstop10=loadall_sanpham_top10();
 // xin chào mọi người 
 // đức đây
+// alooo son day
 
  if((isset($_GET['act']))&&($_GET['act']!="")){
    $act=$_GET['act'];
