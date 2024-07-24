@@ -134,9 +134,12 @@
                 break; 
         case 'thongke'  :
                 $listthongke= loadall_thongke();
-                $listbill= loadall_bill(0);
                 include "thongke/list.php";
-                break; 
+                break;
+        case 'donhang'  :
+                    $listbill= loadall_bill(0);
+                    include "donhang/list.php";
+                    break;          
         case 'bieudo'  :
                 $listthongke= loadall_thongke();
                 include "thongke/bieudo.php";

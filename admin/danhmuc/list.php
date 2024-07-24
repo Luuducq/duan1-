@@ -1,5 +1,5 @@
 <div class="row mb10 fromdanhsachloai">
-    <h2>Danh sách danh mục</h2>
+    <h2>Danh sách danh mục </h2>
             <table>
                 <tr>
                     <th></th>
