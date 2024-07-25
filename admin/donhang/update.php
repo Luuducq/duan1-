@@ -10,7 +10,7 @@
             <form action="index.php?act=updatedh&id=<?=$id?>" method="post" >
                 
                  <div class="row mb10">
-                    Tình trạng đơn hàng
+                    Tình trạng đơn hàng mới :
                     <input type="text" name="billstatus" value="<?=$billstatus?>" >
                  </div>
                 
