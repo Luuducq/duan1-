@@ -10,20 +10,21 @@
     $act=$_GET['act'];
     switch ($act) {
      //danhmuc  
-        case 'adddm':
-            // kiem tra xem ng dung co an nut hay k
-            if(isset($_POST['themmoi'])&&($_POST['themmoi'])){
-                 $tenloai=$_POST['tenloai'] ;
-                 insert_danhmuc($tenloai);
-                 $thongbao= "Them thanh cong" ;
-            }
-            include "danhmuc/add.php";
-            break;
+        
         case 'dsdm':
             $sql="select *from danhmuc order by id desc";
             $listdanhmuc= loadall_danhmuc();
             include "danhmuc/list.php";
             break;
+        case 'adddm':
+                // kiem tra xem ng dung co an nut hay k
+                if(isset($_POST['themmoi'])&&($_POST['themmoi'])){
+                     $tenloai=$_POST['tenloai'] ;
+                     insert_danhmuc($tenloai);
+                     $thongbao= "Them thanh cong" ;
+                }
+                include "danhmuc/add.php";
+                break;    
         case 'xoadm'  :
             if(isset($_GET['id'])&&($_GET['id']>0)){
                 delete_danhmuc($_GET['id']);
@@ -49,6 +50,19 @@
             break;
                 
         // san pham//
+        case 'dssp':
+            // $sql="select *from sanpham order by id desc";
+            if(isset($_POST['listok'])&&($_POST['listok'])){
+               $kyw=$_POST['kyw'];
+               $iddanhmuc=$_POST['iddanhmuc'];
+            }else{
+                $kyw="";
+               $iddanhmuc=0;
+            }
+            $listdanhmuc= loadall_danhmuc();
+            $listsanpham= loadall_sanpham($kyw,$iddanhmuc);
+            include "sanpham/list.php";
+            break;
         
         case 'addsp':
             // kiem tra xem ng dung co an nut hay k
@@ -72,19 +86,6 @@
             }
             $listdanhmuc= loadall_danhmuc();
             include "sanpham/add.php";
-            break;
-        case 'dssp':
-            // $sql="select *from sanpham order by id desc";
-            if(isset($_POST['listok'])&&($_POST['listok'])){
-               $kyw=$_POST['kyw'];
-               $iddanhmuc=$_POST['iddanhmuc'];
-            }else{
-                $kyw="";
-               $iddanhmuc=0;
-            }
-            $listdanhmuc= loadall_danhmuc();
-            $listsanpham= loadall_sanpham($kyw,$iddanhmuc);
-            include "sanpham/list.php";
             break;
         case 'xoasp':
             if(isset($_GET['id'])&&($_GET['id']>0)){
@@ -139,7 +140,23 @@
         case 'donhang'  :
                     $listbill= loadall_bill(0);
                     include "donhang/list.php";
-                    break;          
+                    break; 
+         case 'suadh':
+                        if(isset($_GET['id'])&&($_GET['id']>0)){
+                            $bill=loadone_bill($_GET['id']);
+                        }
+                        include "donhang/update.php";
+                        break;            
+        case 'updatedh':
+                        if(isset($_POST['capnhat'])&&($_POST['capnhat'])){
+                            $id=$_POST['id'] ;
+                            $billstatus=$_POST['billstatus'] ;
+                            update_donhang($id,$billstatus);
+                            $thongbao= "Cap nhat thanh cong" ;
+                       }
+                       $listbill= loadall_bill(0);
+                        include "donhang/list.php";
+                        break;                       
         case 'bieudo'  :
                 $listthongke= loadall_thongke();
                 include "thongke/bieudo.php";

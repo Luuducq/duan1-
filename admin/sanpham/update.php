@@ -1,7 +1,6 @@
 <?php
     if(is_array($sanpham)){
         extract($sanpham);
-        echo "ID sản phẩm: " . $id;
     }
     $hinhpath="../upload/".$image;
     if(is_file( $hinhpath)){

@@ -160,5 +160,9 @@ function loadall_cart_count($idbill){
     }
     return $tt;
  }
+ function update_donhang($id,$billstatus){
+    $sql= "update bill set billstatus='".$billstatus."' where id=".$id;
+    pdo_execute($sql)   ;
+ }
 
 ?>

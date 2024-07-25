@@ -15,8 +15,8 @@
         <div class="row mb menu">
             <ul>
                 <li><a href="index.php">Trang chủ</a></li>
-                <li><a href="index.php?act=adddm">Danh mục</a></li>
-                <li><a href="index.php?act=addsp">Sản phẩm</a></li>
+                <li><a href="index.php?act=dsdm">Danh mục</a></li>
+                <li><a href="index.php?act=dssp">Sản phẩm</a></li>
                 <li><a href="index.php?act=dsbl">Bình luận</a></li>
                 <li><a href="index.php?act=dskh">Khách hàng</a></li>
                 <li><a href="index.php?act=donhang">Quản lý đơn hàng</a></li>
