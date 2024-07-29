@@ -146,7 +146,7 @@ function loadall_cart_count($idbill){
             $tt="Đơn hàng mới";
             break;
         case '1':
-            $tt="Đang sử lý";
+            $tt="Đang xử lý";
             break;
         case '2':
             $tt="Đang giao hàng";
@@ -164,5 +164,23 @@ function loadall_cart_count($idbill){
     $sql= "update bill set billstatus='".$billstatus."' where id=".$id;
     pdo_execute($sql)   ;
  }
+ function get_pttt($n){
+    switch ($n) {
+        case '0':
+            $pt="Thanh toán trực tiếp";
+            break;
+        case '1':
+            $pt="Chuyển khoản ngân hàng";
+            break;
+        case '2':
+            $pt="Thanh toán online";
+            break;   
+        default:
+            $pt="Thanh toán trực tiếp";
+            break;
+    }
+    return $pt;
+ }
+
 
 ?>

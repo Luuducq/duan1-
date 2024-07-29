@@ -6,6 +6,7 @@
                     <th>Khách hàng</th>
                     <th>Số lượng hàng </th>
                     <th>Giá trị đơn hàng</th>
+                    <th>Phương thức thanh toán</th>
                     <th>Tình trạng đơn hàng</th>
                     <th>Ngày đặt hàng</th>
                     <th>Thao tác</th>
@@ -19,12 +20,14 @@
                 <br> '.$bill["billdiachi"].'
                 <br> '.$bill["billsdt"];
                 $ttdh=get_ttdh($bill["billstatus"]);
+                $pttt=get_pttt($bill["billpttt"]);
                 $countsp=loadall_cart_count($bill['id']);
                 echo '<tr>
                         <td>SP-'.$bill['id'].'</td> 
                         <td>'.$kh.'</td> 
                         <td>'.$countsp.'</td>   
                         <td><strong>'.$bill['total'].'</strong>VND</td> 
+                        <td>'.$pttt.'</td>
                         <td>'. $ttdh.'</td> 
                         <td>'.$bill['ngaydathang'].'</td> 
                          <td>
