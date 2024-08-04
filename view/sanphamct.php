@@ -10,9 +10,8 @@
 <div class=" row boxcontent">
 <?php 
 $image = $img_path . $image;
-echo '<div class="row mb spct"><img src="' . $image . '" width="250px" height="230px"></div> ';
+echo '<div class="row mb spct"><img src="' . $image . '" width="180px" height="180px"></div> ';
 echo $gia;
-echo " VND";
 echo "<br>";
 echo $mota;
 echo "<br>";
@@ -28,7 +27,7 @@ if (isset($_SESSION['tentk'])) {
         <input type="hidden" name="tensp" value="' . $tensp . '">
         <input type="hidden" name="image" value="' . $image . '">
         <input type="hidden" name="gia" value="' . $gia . '">
-        <input type="submit" name="addtocart" value="&#128722; Thêm vào giỏ hàng">
+        <input type="submit" name="addtocart" value="Thêm vào giỏ hàng">
         </form>
     ';
 }

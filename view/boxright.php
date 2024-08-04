@@ -1,6 +1,6 @@
 
 <div class="row mb">
-<div class="boxtieude"><strong>Tài Khoản &nbsp;&#128100;&nbsp;</strong></div>
+            <div class="boxtieude"><strong>Tài Khoản</strong></div>
             <div class="boxcontent formtaikhoan">
             <?php
               if(isset($_SESSION['tentk'])){
@@ -11,23 +11,11 @@
                     <?=$tentk?>
                 </div>
             <div class="row mb10">
-            <li>
-               <a href="index.php?act=mybill">Đơn hàng của tôi &#x1F6D2;</a>
-             </li>
-              <li>
-                   <a href="index.php?act=quenmk">Quên mật khẩu &#x1F512;</a>
-              </li>
-              <li>
-                   <a href="index.php?act=edit_taikhoan">Cập nhật tài khoản &#x1F4E5;</a>
-              </li>
                 <?php if($role==1) {?>
               <li>
-                   <a href="admin/index.php">Đăng nhập Admin  &#128274;</a>
+                   <a href="admin/index.php">Đăng nhập Admin</a>
               </li>
                     <?php }?>
-              <li>
-                   <a href="index.php?act=thoat">Thoát  &#x1F6AA;</a>
-              </li>
             </div>
 
             <?php
@@ -59,7 +47,7 @@
             </div>
            </div>
            <div class="row mb">
-           <div class="boxtieude"><strong>Danh Mục &nbsp;&#128477;&nbsp;</strong></div>
+            <div class="boxtieude"><strong>Danh Mục</strong></div>
             <div class="boxcontent2 menudoc">
                 <ul>
                     <?php
@@ -71,28 +59,60 @@
                     </li>';
                     }
                     ?>
+                 
                 </ul>
             </div>
             <div class="boxfooter timbox">
                 <form action="index.php?act=sanpham" method="post">
                     <div class="kp"><input type="text" name="kyw" ></div>
-                    <div class="kl"><input type="submit" name="timkiem" value="&#128269;&nbsp;Tìm&nbsp;kiếm"></div>
+                    <div class="kl"><input type="submit" name="timkiem" value="Tìm kiếm"></div>
                 </form>
             </div>
            </div>
            <div class="row mb">
-           <div class="boxtieude"><strong>Các sản phẩm được mua nhiều nhất &nbsp;&#129054;&nbsp;&#128293;</strong></div>
+            <div class="boxtieude"><strong>Các sản phẩm được mua nhiều nhất</strong></div>
             <div class=" row boxcontent">
                 <?php
                 foreach ($dstop10 as $sp) {
                    extract($sp);
-                    $hinh= $img_path.$image;
+    
+                    $image= $img_path.$image;
                     $linksp="index.php?act=sanphamct&idsp=".$id;
                    echo '<div class="row mb10 top10">
-                   <img src="'.$hinh.'" alt="" >
+                   <img src="'.$image.'" alt="" >
                    <a href="'.$linksp.'">'.$tensp.'</a>
                    </div>';
                 }
                 ?>
+
+                <!-- <div class="row mb10 top10">
+                    <img src="view/image/3.jpg" alt="" >
+                    <a href="#">Op tinh yeu</a>
+                </div>
+                <div class="row mb10 top10">
+                    <img src="view/image/3.jpg" alt="">
+                    <a href="#">Op tinh yeu</a>
+                </div>
+                <div class="row mb10 top10">
+                    <img src="view/image/3.jpg" alt="">
+                    <a href="#">Op tinh yeu</a>
+                </div>
+                <div class="row mb10 top10">
+                    <img src="view/image/3.jpg" alt="">
+                    <a href="#">Op tinh yeu</a>
+                </div>
+                <div class="row mb10 top10">
+                    <img src="view/image/3.jpg" alt="">
+                    <a href="#">Op tinh yeu</a>
+                </div>
+                <div class="row mb10 top10">
+                    <img src="view/image/3.jpg" alt="">
+                    <a href="#">Op tinh yeu</a>
+                </div>
+                <div class="row mb10 top10">
+                    <img src="view/image/3.jpg" alt="">
+                    <a href="#">Op tinh yeu</a>
+                </div>
+                 -->
             </div>
            </div>

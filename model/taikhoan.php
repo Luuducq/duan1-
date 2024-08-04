@@ -2,7 +2,7 @@
 function insert_taikhoan($email,$pass,$tentk){
     $sql= "insert into taikhoan(tentk,pass,email)
      values('$email','$pass','$tentk')";
-    pdo_execute($sql)   ;
+         ;
  }
  function check_tentk($tentk,$pass){
     $sql="select *from taikhoan where tentk='".$tentk."' AND pass='".$pass."'" ;

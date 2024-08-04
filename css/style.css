@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-    font-family: Bahnschrift Condensed;
+    font-family: sans-serif;
     font-size: 1vw;
 }
 .boxcenter{
@@ -23,14 +23,14 @@
 .header{
     background-color: chocolate;
     color: antiquewhite;
-    /* border-radius: 5px; */
+    border-radius: 5px;
 }
 .footer{
     background-color: hotpink;
     border: 1px darkgrey solid;
     font-size: 0.8vw;
     color: antiquewhite;
-    /* border-radius: 5px; */
+    border-radius: 5px;
     padding: 10px;
 }
 .header h1{
@@ -41,7 +41,7 @@
     background-color:#333;
     border: 1px darkgrey solid;
     color: rgb(114, 108, 99);
-    /* border-radius: 5px; */
+    border-radius: 5px;
 }
 .boxphai{
     float: right;
@@ -55,8 +55,8 @@
     color: #333;
     padding: 10px;
     background-color: #eee;
-    /* border-top-left-radius: 5px;
-    border-top-right-radius: 5px; */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     border: 1px #ccc solid;
     
 }
@@ -64,8 +64,8 @@
     border-left: 1px #ccc solid;
     border-right: 1px #ccc solid;
     border-bottom: 1px #ccc solid;
-    /* border-bottom-left-radius: 5px; */
-    /* border-bottom-right-radius: 5px; */
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     min-height: 200px;
     padding: 10px;
 }
@@ -78,8 +78,8 @@
     color: #333;
     padding: 10px;
     background-color: #eee;
-    /* border-bottom-left-radius: 5px; */
-    /* border-bottom-right-radius: 5px; */
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     border-left: 1px #ccc solid;
     border-right: 1px #ccc solid;
 
@@ -97,7 +97,7 @@
     width: 31%;
     min-height: 200px;
     border: 1px #eee solid;
-    /* border-radius: 5px; */
+    border-radius: 5px;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -129,19 +129,19 @@
     width: 100%;
     border: 1px #ccc solid;
     padding: 5px;
-    /* border-radius: 5px; */
+    border-radius: 5px;
 }
 .formtaikhoan input[type="password"]{
     width: 100%;
     border: 1px #ccc solid;
     padding: 5px;
-    /* border-radius: 5px; */
+    border-radius: 5px;
 }
 .formtaikhoan input[type="checkbox"]{
     border-radius: 5px;
 }
 .formtaikhoan input[type="submit"]{
-    /* border-radius: 5px; */
+    border-radius: 5px;
     padding: 5px 10px;
     background-color: white;
     border:1px #ccc solid;
@@ -179,14 +179,14 @@
    padding: 5px;
    border: 1px #ccc solid;
    background-color: #fff;
-   /* border-radius: 5px; */
+   border-radius: 5px;
 }
 .top10 img{
     width: 15%;
     height:30px ;
     float: left;
     margin-right: 10px;
-    /* border-radius: 5px; */
+    border-radius: 5px;
     border: 1px #ccc solid;
 }
 .top10 a{
@@ -200,7 +200,7 @@
 .headeradmin{
     background-color:#333;
     color:white;
-    /* border-radius: 5px; */
+    border-radius: 5px;
     padding: 5px;
 }
 .headeradmin h1{
@@ -211,7 +211,7 @@
 .fromtitle{
     background-color:#ccc;
     color:#333;
-    /* border-radius: 5px; */
+    border-radius: 5px;
     padding: 5px;
     width: 225px;
 }
@@ -282,14 +282,14 @@
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
-    /* border-radius: 0 3px 3px 0; */
+    border-radius: 0 3px 3px 0;
     user-select: none;
   }
   
   /* Position the "next button" to the right */
   .next {
     right: 0;
-    /* border-radius: 3px 0 0 3px; */
+    border-radius: 3px 0 0 3px;
   }
   
   /* On hover, add a black background color with a little bit see-through */
@@ -395,7 +395,7 @@
       background: #666666;
       border: 1px solid;
       border-color: #666;
-      /* border-radius: 0; */
+      border-radius: 0;
       -webkit-transition: all 300ms ease;
       transition: all 300ms ease;
       padding: 10px 10px 10px 14px;
@@ -419,4 +419,6 @@
   label {
       margin-bottom: 0.5rem;
   }
+  
+
   

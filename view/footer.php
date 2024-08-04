@@ -1,100 +1,83 @@
 
 <div class="row mb footer">
-<footer>
-  <div class="footer-content">
-    <div class="footer-section about">
-      <h3>About Us</h3>
-      <p>We are a company dedicated to providing high-quality products and services to our customers.</p>
-    </div>
-    <div class="footer-section links">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-section contact">
-      <h3>Contact Us</h3>
-      <div class="contact-info">
-        <i class="fas fa-map-marker-alt"></i>
-        <span>123 Example Street, Anytown USA</span>
-      </div>
-      <div class="contact-info">
-        <i class="fas fa-phone"></i>
-        <span>+1 (123) 456-7890</span>
-      </div>
-      <div class="contact-info">
-        <i class="fas fa-envelope"></i>
-        <span>info@example.com</span>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2023 Example Company. All rights reserved.</p>
-  </div>
-</footer>
+    <div>
+    <div class="footer-navigation section-padding">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <!-- footer description -->
+                    <div class="footer-description">
+                        <div class="footer-logo">
+                            <img width="220" height="100" src="../images/LOGO.jpg" alt="">
+                        </div>
+                    </div>
+                    <!-- end of footer description -->
+                </div>
+                <div class="col-lg-8 col-md-8">
+                    <!-- footer nav links -->
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <!-- single footer nav block -->
+                            <div class="single-footer-nav-block">
+                                <h2 class="block-title">INFORMATION</h2>
+                                <ul class="footer-nav-links">
+                                    <li><a href="shop-left-sidebar.html">Specials</a></li>
+                                    <li><a href="shop-left-sidebar.html">New Products</a></li>
+                                    <li><a href="shop-left-sidebar.html">Best Sellers</a></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                </ul>
+                            </div>
+                            <!-- end of single footer nav block -->
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <!-- single footer nav block -->
+                            <div class="single-footer-nav-block">
+                                <h2 class="block-title"><a href="my-account.html">MY ACCOUNT</a>
+                                </h2>
+                                <ul class="footer-nav-links">
+                                    <li><a href="#">My Orders</a></li>
+                                    <li><a href="#">My Credit Slips</a></li>
+                                    <li><a href="my-account.html">My Addresses</a></li>
+                                    <li><a href="my-account.html">My Personal Info</a></li>
+                                </ul>
+                            </div>
+                            <!-- end of single footer nav block -->
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <!-- single footer nav block -->
+                            <div class="single-footer-nav-block">
+                                <h2 class="block-title">CATEGORIES</h2>
+                                <ul class="footer-nav-links">
+                                    <li><a href="shop-left-sidebar.html">Football</a></li>
+                                    <li><a href="shop-left-sidebar.html">Tennis</a></li>
+                                    <li><a href="shop-left-sidebar.html">Formula</a></li>
+                                    <li><a href="shop-left-sidebar.html">Cricket</a></li>
+                                    <li><a href="shop-left-sidebar.html">Baseball</a></li>
+                                </ul>
+                            </div>
+                            <!-- end of single footer nav block -->
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <!-- single footer nav block -->
+                            <div class="single-footer-nav-block">
+                                <h2 class="block-title">OUR SERVICES</h2>
+                                <ul class="footer-nav-links">
+                                    <li><a href="store.html">Our Stores</a></li>
+                                    <li><a href="about.html">Information</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Terms &amp; Condition</a></li>
+                                </ul>
+                            </div>
+                            <!-- end of single footer nav block -->
+                        </div>
+                    </div>
+                    <!-- end of footer nav links -->
 
-<style>
-  footer {
-    background-color: #333;
-    color: #fff;
-    padding: 40px 0;
-    font-size: 14px;
-  }
-
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .footer-section {
-    width: 30%;
-  }
-
-  .footer-section h3 {
-    margin-bottom: 20px;
-  }
-
-  .footer-section ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  .footer-section ul li {
-    margin-bottom: 10px;
-  }
-
-  .footer-section ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .footer-section ul li a:hover {
-    color: #ccc;
-  }
-
-  .contact-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-
-  .contact-info i {
-    margin-right: 10px;
-  }
-
-  .footer-bottom {
-    text-align: center;
-    margin-top: 40px;
-  }
-</style>
+                </div>
+            </div>
+        </div>
     </div>
 
- </div>
  <script>
    let slideIndex = 0;
 showSlides();
