@@ -8,13 +8,13 @@
     <meta charset="utf-8">
     <title>Quản Trị Viên</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/44444/admin/css1/jsvectormap.min.css" rel="stylesheet" type="text/css">
-    <link href="/44444/admin/css1/swiper-bundle.min.css" rel="stylesheet" type="text/css">
-    <script src="/44444/admin/js1/layout.js"></script>
-    <link href="/44444/admin/css1/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="/44444/admin/css1/icons.min.css" rel="stylesheet" type="text/css">
-    <link href="/44444/admin/css1/app.min.css?<?= time(); ?>" rel="stylesheet" type="text/css">
-    <link href="/44444/admin/css1/custom.min.css" rel="stylesheet" type="text/css">
+    <link href="/duan1/admin/css1/jsvectormap.min.css" rel="stylesheet" type="text/css">
+    <link href="/duan1/admin/css1/swiper-bundle.min.css" rel="stylesheet" type="text/css">
+    <script src="/duan1/admin/js1/layout.js"></script>
+    <link href="/duan1/admin/css1/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/duan1/admin/css1/icons.min.css" rel="stylesheet" type="text/css">
+    <link href="/duan1/admin/css1/app.min.css?<?= time(); ?>" rel="stylesheet" type="text/css">
+    <link href="/duan1/admin/css1/custom.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
@@ -110,9 +110,9 @@
 
 
                         <div class="dropdown ms-sm-3 header-item topbar-user">
-                            <a href="/44444/index.php?act=edit_taikhoan" class="btn material-shadow-none">
+                            <a href="/duan1/index.php?act=edit_taikhoan" class="btn material-shadow-none">
                                 <span class="d-flex align-items-center">
-                                    <img class="rounded-circle header-profile-user" src="/44444/admin/image/user.png" alt="User">
+                                    <img class="rounded-circle header-profile-user" src="/duan1/admin/image/user.png" alt="User">
                                     <span class="text-start ms-xl-2">
                                         <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text"><?= $_SESSION['tentk']['tentk']; ?></span>
                                         <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text"><?= $_SESSION['tentk']['email']; ?></span>

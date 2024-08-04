@@ -17,22 +17,22 @@ require ('pdo.php');
 
     <!-- ************************* CSS ************************* -->
     <!-- Bootstrap CSS -->
-    <link href="/44444/nam/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/duan1/nam/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Fontawesome CSS -->
-    <link href="/44444/nam/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/duan1/nam/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- IcoFont CSS -->
-    <link href="/44444/nam/css/icon-font.min.css" rel="stylesheet">
+    <link href="/duan1/nam/css/icon-font.min.css" rel="stylesheet">
 
     <!-- Plugins CSS -->
-    <link href="/44444/nam/css/plugins.css" rel="stylesheet">
+    <link href="/duan1/nam/css/plugins.css" rel="stylesheet">
 
     <!-- Main CSS -->
-    <link href="/44444/nam/css/main.css?<?=time();?>" rel="stylesheet">
+    <link href="/duan1/nam/css/main.css?<?=time();?>" rel="stylesheet">
 
     <!-- Modernizer JS -->
-    <script src="/44444/nam/js/modernizr-2.8.3.min.js"></script>
+    <script src="/duan1/nam/js/modernizr-2.8.3.min.js"></script>
 
 </head>
 

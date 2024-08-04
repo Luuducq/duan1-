@@ -282,19 +282,19 @@
 
 <!-- ************************* JS ************************* -->
 <!-- jQuery JS -->
-<script src="/44444/nam/js/jquery.min.js"></script>
+<script src="/duan1/nam/js/jquery.min.js"></script>
 
 <!-- Popper JS -->
-<script src="/44444/nam/js/popper.min.js"></script>
+<script src="/duan1/nam/js/popper.min.js"></script>
 
 <!-- Bootstrap JS -->
-<script src="/44444/nam/js/bootstrap.min.js"></script>
+<script src="/duan1/nam/js/bootstrap.min.js"></script>
 
 <!-- Plugins JS -->
-<script src="/44444/nam/js/plugins.js"></script>
+<script src="/duan1/nam/js/plugins.js"></script>
 
 <!-- Main JS -->
-<script src="/44444/nam/js/main.js"></script>
+<script src="/duan1/nam/js/main.js"></script>
 
 
 

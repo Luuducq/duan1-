@@ -54,14 +54,14 @@
 								<ul>
 									<?php if (isset($_SESSION['username'])) {
 										if ($_SESSION['role'] == 1) { ?>
-											<li><a href="44444/admin/index.php" style="font-size: 18px; color:black; margin-top: 10px;"><?php echo $_SESSION['username'] ?> </a></li>
-											<li><a href="/44444/nam/page/dangxuat.php" style="font-size: 18px; color:black; margin-top: 10px;">| Đăng Xuất</a></li>
+											<li><a href="duan1/admin/index.php" style="font-size: 18px; color:black; margin-top: 10px;"><?php echo $_SESSION['username'] ?> </a></li>
+											<li><a href="/duan1/nam/page/dangxuat.php" style="font-size: 18px; color:black; margin-top: 10px;">| Đăng Xuất</a></li>
 										<?php } else { ?>
 											<li><a href="#" style="font-size: 18px; color:black; margin-top: 10px;"><?php echo $_SESSION['username'] ?> </a></li>
-											<li><a href="/44444/nam/page/dangxuat.php" style="font-size: 18px; color:black; margin-top: 10px;">| Đăng Xuất</a></li>
+											<li><a href="/duan1/nam/page/dangxuat.php" style="font-size: 18px; color:black; margin-top: 10px;">| Đăng Xuất</a></li>
 										<?php }
 									} else { ?>
-										<li><a href="/44444/nam/page/dangnhap.php" style="font-size: 18px; color:black; margin-top: 10px;">Đăng Ký | Đăng nhập</a></li>
+										<li><a href="/duan1/nam/page/dangnhap.php" style="font-size: 18px; color:black; margin-top: 10px;">Đăng Ký | Đăng nhập</a></li>
 									<?php } ?>
 								</ul>
 							</div>
@@ -87,11 +87,11 @@
 							<div class="main-menu">
 								<nav>
 									<ul>
-										<li class="active"><a href="/44444/nam/index.php">Trang chủ</a></li>
-										<li><a href="/44444/nam/page/gioithieu.php">Câu chuyện thương hiệu</a></li>
-										<li><a href="/44444/nam/page/sanpham.php">Sản phẩm</a></li>
-										<li><a href="/44444/nam/page/doitra.php">Phương tiện truyền thông</a></li>
-										<li><a href="/44444/nam/page/lienhe.php">Liên hệ</a></li>
+										<li class="active"><a href="/duan1/nam/index.php">Trang chủ</a></li>
+										<li><a href="/duan1/nam/page/gioithieu.php">Câu chuyện thương hiệu</a></li>
+										<li><a href="/duan1/nam/page/sanpham.php">Sản phẩm</a></li>
+										<li><a href="/duan1/nam/page/doitra.php">Phương tiện truyền thông</a></li>
+										<li><a href="/duan1/nam/page/lienhe.php">Liên hệ</a></li>
 
 									</ul>
 								</nav>

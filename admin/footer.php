@@ -12,10 +12,10 @@
 <a href="#" class="scroll-top"></a>
 
 
-<script src="/44444/admin/js1/popper.min.js"></script>
-<script src="/44444/admin/js1/bootstrap.min.js?<?= time(); ?>"></script>
-<script src="/44444/admin/js1/plugins.js?<?= time(); ?>"></script>
-<script src="/44444/admin/js1/main.js?<?= time(); ?>"></script>
+<script src="/duan1/admin/js1/popper.min.js"></script>
+<script src="/duan1/admin/js1/bootstrap.min.js?<?= time(); ?>"></script>
+<script src="/duan1/admin/js1/plugins.js?<?= time(); ?>"></script>
+<script src="/duan1/admin/js1/main.js?<?= time(); ?>"></script>
 <script>
     $(document).ready(function() {
         $('.summernote').summernote();

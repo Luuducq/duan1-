@@ -107,30 +107,30 @@
 	<div class="vertical-product-slider-container">
 
 		<div class="row">
-		<?php foreach(pdo_query("select *from danhmuc order by id desc LIMIT 3") as $categori): ?>
-			<div class="col-lg-4 mb-3">
-				<div class="single-vertical-slider">
-					<h2 class="block-title vertical-slider-block-title"><?=$categori['tendanhmuc'];?></h2>
-					<div class="vertical-product-list">
-					<?php foreach (pdo_query("select *from sanpham where `iddanhmuc` = '" . $categori['id'] . "' order by id desc") as $product) : ?>
-						<div class="single-vertical-product d-flex">
-							<div class="product-image">
-								<a href="#"><img width="250" height="250" src="/44444/upload/<?=$product['image'] ?>" class="img-fluid" alt=""></a>
-							</div>
-							<div class="product-description">
-								<h5 class="product-name"><a href="single-product-variable.html"><?= $product['tensp']; ?></a>
-								</h5>
-								<div class="price-box">
-									<h4><?= number_format($product['gia']); ?>đ</h4>
+			<?php foreach (pdo_query("select *from danhmuc order by id desc LIMIT 3") as $categori) : ?>
+				<div class="col-lg-4 mb-3">
+					<div class="single-vertical-slider">
+						<h2 class="block-title vertical-slider-block-title"><?= $categori['tendanhmuc']; ?></h2>
+						<div class="vertical-product-list">
+							<?php foreach (pdo_query("select *from sanpham where `iddanhmuc` = '" . $categori['id'] . "' order by id desc") as $product) : ?>
+								<div class="single-vertical-product d-flex">
+									<div class="product-image">
+										<a href="/duan1/nam/page/spct.php"><img width="250" height="250" src="/duan1/upload/<?= $product['image'] ?>" class="img-fluid" alt=""></a>
+									</div>
+									<div class="product-description">
+										<h5 class="product-name"><a href="/duan1/nam/page/spct.php"><?= $product['tensp']; ?></a>
+										</h5>
+										<div class="price-box">
+											<h4><?= number_format($product['gia']); ?>đ</h4>
+										</div>
+										<a href="#" class="add-to-cart-btn" data-bs-toggle="modal" data-bs-target="#add-to-cart-modal-container"><i class="fa fa-shopping-cart"></i>
+											Thêm Vào Giỏ Hàng</a>
+									</div>
 								</div>
-								<a href="#" class="add-to-cart-btn" data-bs-toggle="modal" data-bs-target="#add-to-cart-modal-container"><i class="fa fa-shopping-cart"></i>
-								Thêm Vào Giỏ Hàng</a>
-							</div>
+							<?php endforeach; ?>
 						</div>
-						<?php endforeach; ?>
 					</div>
 				</div>
-			</div>
 			<?php endforeach; ?>
 		</div>
 	</div>

@@ -1,24 +1,10 @@
+
 <?php
-require ('../include/head.php');
-require ('../include/header.php');
+require('../include/head.php');
+require('../include/header.php');
 ?>
 
-<div class="breadcrumb-area">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="breadcrumb-container">
-                                            <ul>
-                                                <li><a href="index.html">Home</a> <span class="bc-separator">|</span>
-                                                </li>
-                                                <li class="active">printed dress</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <section class="single-product-page-content">
+<section class="single-product-page-content">
                         <div class="container">
                             <div class="row">
 
@@ -101,24 +87,11 @@ require ('../include/header.php');
                                         <div class="col-lg-7 col-md-5">
                                             <!-- product quick view description -->
                                             <div class="product-options">
-                                                <h2 class="product-title">FADED SHORT SLEEVE</h2>
-                                                <p class="condition"><span>Condition:</span> New</p>
+                                                <h2 class="product-title">Tên</h2>
                                                 <h2 class="product-price">$12.90</h2>
-                                                <p class="product-description">Faded short sleeve t-shirt with high
-                                                    neckline. Soft and
-                                                    stretchy material for a
-                                                    comfortable fit. Accessorize with a straw hat and you're ready for
-                                                    summer!</p>
+                                                <p class="product-description">Mô tả</p>
 
-                                                <div class="single-product-user-action">
-                                                    <ul>
-                                                        <li><a href="#"> <i class="fa fa-envelope-o"></i> Send to a
-                                                                friend</a></li>
-                                                        <li><a href="#"> <i class="fa fa-print"></i> Print</a></li>
-                                                        <li><a href="#"> <i class="fa fa-heart-o"></i> Add to
-                                                                wishlist</a></li>
-                                                    </ul>
-                                                </div>
+                                              
                                                 <div class="social-share-buttons">
                                                     <ul>
                                                         <li><a class="twitter" href="#"><i class="fa fa-twitter"></i>
@@ -131,9 +104,9 @@ require ('../include/header.php');
                                                                 Pinterest</a></li>
                                                     </ul>
                                                 </div>
-                                                <p class="stock-details">288 items <span class="stock-status in-stock">In
+                                                <p class="stock-details">Số lượng hàng  <span class="stock-status in-stock">In
                                                         Stock</span></p>
-                                                <p class="quantity">Quantity:
+                                                <p class="quantity">Số lượng mua:
 
                                                     <span class="pro-qty counter"><input type="text" value="1" class="mr-5"><a href="#" class="inc qty-btn mr-5"><i class="fa fa-plus"></i></a><a href="#" class="dec qty-btn"><i class="fa fa-minus"></i></a></span>
 
@@ -155,7 +128,7 @@ require ('../include/header.php');
                                                 </p>
 
                                                 <a href="#" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>
-                                                    Add to Cart</a>
+                                                   Thêm giỏ hàng</a>
                                             </div>
                                             <!-- end ofproduct quick view description -->
                                         </div>
@@ -657,27 +630,7 @@ require ('../include/header.php');
                                                 <div class="single-vertical-slider">
 
                                                     <div class="vertical-auto-slider-product-list slick-vertical slick-initialized slick-slider">
-                                                        <!-- single vertical product -->
-                                                        
-                                                        <!-- end of single vertical product -->
-                                                        <!-- single vertical product -->
-                                                        
-                                                        <!-- end of single vertical product -->
-                                                        <!-- single vertical product -->
-                                                        
-                                                        <!-- end of single vertical product -->
-                                                        <!-- single vertical product -->
-                                                        
-                                                        <!-- end of single vertical product -->
-                                                        <!-- single vertical product -->
-                                                        
-                                                        <!-- end of single vertical product -->
-                                                        <!-- single vertical product -->
-                                                        
-                                                        <!-- end of single vertical product -->
-                                                        <!-- single vertical product -->
-                                                        
-                                                        <!-- end of single vertical product -->
+                                                      
 
                                                     <div class="slick-list draggable" style="height: 330px;"><div class="slick-track" style="opacity: 1; height: 1870px; transform: translate3d(0px, -330px, 0px);"><div class="single-auto-vertical-product d-flex slick-slide slick-cloned" tabindex="-1" style="width: 200px;" data-slick-index="-3" id="" aria-hidden="true">
                                                             <div class="product-image">
@@ -691,7 +644,10 @@ require ('../include/header.php');
                                                                 </div>
 
                                                             </div>
-                                                        </div><div class="single-auto-vertical-product d-flex slick-slide slick-cloned" tabindex="-1" style="width: 200px;" data-slick-index="-2" id="" aria-hidden="true">
+                                                        </div>
+                                                        
+                                                        
+                                                        <div class="single-auto-vertical-product d-flex slick-slide slick-cloned" tabindex="-1" style="width: 200px;" data-slick-index="-2" id="" aria-hidden="true">
                                                             <div class="product-image">
                                                                 <a href="single-product-variable.html" tabindex="-1"><img width="250" height="250" src="assets/images/products/6.webp" class="img-fluid" alt=""></a>
                                                             </div>
@@ -703,7 +659,9 @@ require ('../include/header.php');
                                                                 </div>
 
                                                             </div>
-                                                        </div><div class="single-auto-vertical-product d-flex slick-slide slick-cloned" tabindex="-1" style="width: 200px;" data-slick-index="-1" id="" aria-hidden="true">
+                                                        </div>
+
+                                                        <div class="single-auto-vertical-product d-flex slick-slide slick-cloned" tabindex="-1" style="width: 200px;" data-slick-index="-1" id="" aria-hidden="true">
                                                             <div class="product-image">
                                                                 <a href="single-product-variable.html" tabindex="-1"><img width="250" height="250" src="assets/images/products/7.webp" class="img-fluid" alt=""></a>
                                                             </div>
@@ -715,7 +673,9 @@ require ('../include/header.php');
                                                                 </div>
 
                                                             </div>
-                                                        </div><div class="single-auto-vertical-product d-flex slick-slide slick-current slick-active" tabindex="0" style="width: 200px;" data-slick-index="0" aria-hidden="false">
+                                                        </div>
+
+                                                        <div class="single-auto-vertical-product d-flex slick-slide slick-current slick-active" tabindex="0" style="width: 200px;" data-slick-index="0" aria-hidden="false">
                                                             <div class="product-image">
                                                                 <a href="single-product-variable.html" tabindex="0"><img width="250" height="250" src="assets/images/products/1.webp" class="img-fluid" alt=""></a>
                                                             </div>
@@ -727,7 +687,8 @@ require ('../include/header.php');
                                                                 </div>
 
                                                             </div>
-                                                        </div><div class="single-auto-vertical-product d-flex slick-slide slick-active" tabindex="0" style="width: 200px;" data-slick-index="1" aria-hidden="false">
+                                                        </div>
+                                                        <div class="single-auto-vertical-product d-flex slick-slide slick-active" tabindex="0" style="width: 200px;" data-slick-index="1" aria-hidden="false">
                                                             <div class="product-image">
                                                                 <a href="single-product-variable.html" tabindex="0"><img width="250" height="250" src="assets/images/products/2.webp" class="img-fluid" alt=""></a>
                                                             </div>
@@ -926,6 +887,6 @@ require ('../include/header.php');
                         </div>
                     </section>
 
-<?php 
-require ('../include/footer.php');
+                    <?php
+require('../include/footer.php');
 ?>
