@@ -115,10 +115,10 @@
 							<?php foreach (pdo_query("select *from sanpham where `iddanhmuc` = '" . $categori['id'] . "' order by id desc") as $product) : ?>
 								<div class="single-vertical-product d-flex">
 									<div class="product-image">
-										<a href="/duan1/nam/page/spct.php"><img width="250" height="250" src="/duan1/upload/<?= $product['image'] ?>" class="img-fluid" alt=""></a>
+										<a href="/duan1/nam/page/spct.php?id=<?= $product['id'] ?>"><img style="witdh:100px; height:100px" src="../upload/<?= $product['image'] ?>" class="img-fluid" alt=""></a>
 									</div>
 									<div class="product-description">
-										<h5 class="product-name"><a href="/duan1/nam/page/spct.php"><?= $product['tensp']; ?></a>
+										<h5 class="product-name"><a href="/duan1/nam/page/spct.php?id=<?= $product['id'] ?>"><?= $product['tensp']; ?></a>
 										</h5>
 										<div class="price-box">
 											<h4><?= number_format($product['gia']); ?>đ</h4>

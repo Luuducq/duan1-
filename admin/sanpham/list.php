@@ -8,7 +8,7 @@
             <div class="fromtitle">
               <h4>Danh sách sản phẩm</h4>
             </div>
-            <a href="/44444/admin/index.php?act=addsp" class="btn btn-danger btn-sm mb-3">Thêm Sản Phẩm</a>
+            <a href="/duan1/admin/index.php?act=addsp" class="btn btn-danger btn-sm mb-3">Thêm Sản Phẩm</a>
             <div class="fromcontent">
               <div class="table-responsive dt-responsive">
                 <div class="dataTables_wrapper dt-bootstrap5">

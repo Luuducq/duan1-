@@ -1,18 +1,18 @@
 <?php
 require('../include/head.php');
 require('../include/header.php');
+include "../../model/binhluan.php";
 ?>
 
 <section class="single-product-page-content">
     <div class="container">
         <div class="row">
-        <?php foreach (pdo_query("select *from danhmuc order by id desc LIMIT 3") as $categori) : ?>
 
             <div class="col-lg-12 col-md-12">
                 <div class="row">
-                <?php foreach (pdo_query("select *from sanpham where `iddanhmuc` = '" . $categori['id'] . "' order by id desc") as $product) : ?>
-                     <div class="col-lg-5 col-md-7">
-                         <div class="single-product-page-image-gallery">
+                    <?php $product = pdo_query_one("select * from sanpham where `id` = '" . $_GET['id'] . "' order by id desc");  ?>
+                    <div class="col-lg-5 col-md-7">
+                        <div class="single-product-page-image-gallery">
                             <!-- product quickview image gallery -->
                             <!--Modal Tab Content Start-->
                             <div class="tab-content product-details-large  sale-badge new-badge">
@@ -23,52 +23,10 @@ require('../include/header.php');
                                     </div>
                                     <!--Single Product Image End-->
                                 </div>
-                                <div class="tab-pane fade" id="single-slide2" role="tabpanel" aria-labelledby="single-slide-tab-2">
-                                    <!--Single Product Image Start-->
-                                    <div class="single-product-img img-full ">
-                                        <img width="458" height="458" src="/44444/admin/image/bd1.jpg" class="img-fluid" alt="">
-                                    </div>
-                                    <!--Single Product Image End-->
-                                </div>
-                                <div class="tab-pane fade" id="single-slide3" role="tabpanel" aria-labelledby="single-slide-tab-3">
-                                    <!--Single Product Image Start-->
-                                    <div class="single-product-img img-full ">
-                                        <img width="458" height="458" src="/44444/admin/image/bd2.jpg" class="img-fluid" alt="">
-                                    </div>
-                                    <!--Single Product Image End-->
-                                </div>
-                                <div class="tab-pane fade" id="single-slide4" role="tabpanel" aria-labelledby="single-slide-tab-4">
-                                    <!--Single Product Image Start-->
-                                    <div class="single-product-img img-full ">
-                                        <img width="458" height="458" src="/44444/admin/image/bd3.jpg" class="img-fluid" alt="">
-                                    </div>
-                                    <!--Single Product Image End-->
-                                </div>
                             </div>
                             <!--Modal Content End-->
                             <!--Modal Tab Menu Start-->
 
-                            <div class="single-product-menu">
-                                <div class="nav single-slide-menu slick-initialized slick-slider" role="tablist"><i class="fa fa-angle-left slick-arrow" style=""></i>
-                                    <div class="slick-list draggable">
-                                        <div class="slick-track" style="opacity: 1; width: 1610px; transform: translate3d(-322px, 0px, 0px);">
-                                            <div class="single-tab-menu img-full slick-slide slick-cloned" tabindex="-1" style="width: 161px;" data-slick-index="-2" id="" aria-hidden="true">
-                                                <a data-bs-toggle="tab" id="" href="#single-slide3" tabindex="-1"><img width="458" height="458" src="/duan1/upload/<?= $product['image'] ?>" class="img-fluid" alt=""></a>
-                                            </div>
-                                            <div class="single-tab-menu img-full slick-slide slick-current slick-active" tabindex="0" style="width: 161px;" data-slick-index="0" aria-hidden="false">
-                                                <a data-bs-toggle="tab" id="single-slide-tab-1" href="#single-slide1" tabindex="0"><img width="458" height="458" src="/duan1/upload/<?= $product['image'] ?>" class="img-fluid" alt=""></a>
-                                            </div>
-                                            <div class="single-tab-menu img-full slick-slide slick-active" tabindex="0" style="width: 161px;" data-slick-index="1" aria-hidden="false">
-                                                <a data-bs-toggle="tab" id="single-slide-tab-2" href="#single-slide2" tabindex="0"><img width="458" height="458" src="/44444/admin/image/bd1.jpg" class="img-fluid" alt=""></a>
-                                            </div>
-                                            <div class="single-tab-menu img-full slick-slide" tabindex="-1" style="width: 161px;" data-slick-index="2" aria-hidden="true">
-                                                <a data-bs-toggle="tab" id="single-slide-tab-3" href="#single-slide3" tabindex="-1"><img width="458" height="458" src="/44444/admin/image/bd2.jpg" class="img-fluid" alt=""></a>
-                                            </div>
-
-                                        </div>
-                                    </div><i class="fa fa-angle-right slick-next-btn slick-arrow" style=""></i>
-                                </div>
-                            </div>
                             <!--Modal Tab Menu End-->
                             <!-- end of product quickview image gallery -->
                         </div>
@@ -77,7 +35,7 @@ require('../include/header.php');
                         <!-- product quick view description -->
                         <div class="product-options">
                             <h2 class="product-title"><?= $product['tensp']; ?></h2>
-                            <h2 class="product-price" style = "color:red"><?= number_format($product['gia']); ?>đ</h2>
+                            <h2 class="product-price" style="color:red"><?= number_format($product['gia']); ?>đ</h2>
 
                             <div class="social-share-buttons">
                                 <ul>
@@ -95,22 +53,6 @@ require('../include/header.php');
                             <p class="quantity">Số lượng mua:
 
                                 <span class="pro-qty counter"><input type="text" value="1" class="mr-5"><a href="#" class="inc qty-btn mr-5"><i class="fa fa-plus"></i></a><a href="#" class="dec qty-btn"><i class="fa fa-minus"></i></a></span>
-
-                            </p>
-                            <p class="size">
-                                Size: <br>
-                                <select name="chooseSize" id="chooseSize">
-                                    <option value="0">XXL</option>
-                                    <option value="0">L</option>
-                                    <option value="0">M</option>
-                                    <option value="0">S</option>
-                                </select>
-                            </p>
-                            <p class="color">
-                                Color: <br>
-                                <a href="#"><span class="color-block color-choice-1"></span></a>
-                                <a href="#"><span class="color-block color-choice-2"></span></a>
-                                <a href="#"><span class="color-block color-choice-3 active"></span></a>
                             </p>
 
                             <a href="#" class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>
@@ -139,88 +81,64 @@ require('../include/header.php');
 
                                 <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="contact-tab">
                                     <div class="product-ratting-wrap">
-                                        <div class="pro-avg-ratting">
-                                            <h4>4.5 <span>(Overall)</span></h4>
-                                            <span>Based on 9 Comments</span>
-                                        </div>
+                                        
                                         <div class="ratting-list">
-                                             <div class="sin-list float-start">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <span>(5)</span>
+                                            <div class="sin-list float-start">
+                                                
+                                               
                                             </div>
                                         </div>
 
-
+                                        <?php
+                                        foreach (loadall_binhluan($product['id']) as $bl) {
+                                        extract($bl);
+                                        ?>
                                         <div class="rattings-wrapper">
-                                             <div class="sin-rattings">
+                                            <div class="sin-rattings">
                                                 <div class="ratting-author">
                                                     <h3>Cristopher Lee</h3>
-                                                    <div class="ratting-star">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <span>(5)</span>
-                                                    </div>
                                                 </div>
-                                                <p>enim ipsam voluptatem quia voluptas sit
-                                                    aspernatur aut odit aut fugit, sed quia res eos
-                                                    qui ratione voluptatem sequi Neque porro
-                                                    quisquam est, qui dolorem ipsum quia dolor sit
-                                                    amet, consectetur, adipisci veli</p>
+                                                <p><?=$noidung;?></p>
                                             </div>
                                         </div>
+                                        <?php } ?>
 
                                         <div class="ratting-form-wrapper fix">
-                                            <h3>Add your Comments</h3>
-                                            <form action="#">
+                                            <h3>Thêm Bình Luận</h3>
+                                            <form action="" method="POST">
                                                 <div class="ratting-form row">
-                                                    <div class="col-12 mb-15">
-                                                        <h5>Rating:</h5>
-                                                        <div class="ratting-star fix">
-                                                            <i class="fa fa-star-o"></i>
-                                                            <i class="fa fa-star-o"></i>
-                                                            <i class="fa fa-star-o"></i>
-                                                            <i class="fa fa-star-o"></i>
-                                                            <i class="fa fa-star-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-12 mb-15">
-                                                        <label for="name">Name:</label>
-                                                        <input id="name" placeholder="Name" type="text">
-                                                    </div>
-                                                    <div class="col-md-6 col-12 mb-15">
-                                                        <label for="email">Email:</label>
-                                                        <input id="email" placeholder="Email" type="text">
+                                                    <div class="col-md-12 col-12 mb-15">
+                                                        <label for="name">Tên khách hàng:</label>
+                                                        <input id="name" placeholder="Nhập tên " type="text" name="name" >
                                                     </div>
                                                     <div class="col-12 mb-15">
-                                                        <label for="your-review">Your
-                                                            Review:</label>
-                                                        <textarea name="review" id="your-review" placeholder="Write a review"></textarea>
+                                                        <label for="your-review">Nội dung :</label>
+                                                        <textarea  id="your-review" name="note" placeholder="Nội dung bình luận"></textarea>
                                                     </div>
                                                     <div class="col-12">
-                                                        <input value="add review" type="submit">
+                                                        <input value="Gửi bình luận" type="submit" name="guicmt">
                                                     </div>
                                                 </div>
                                             </form>
                                         </div>
-                                    
+                                        <?php
+                                        if(isset($_POST['guicmt'])) {
+                                            $name = $_POST['name'];
+                                            $note = $_POST['note']; 
+                                            $sql= "INSERT INTO `binhluan`(`noidung`, `idtk`, `idpro`, `ngaybinhluan`) VALUES ('$note','$name','".$product['id']."','".date("Y-m-d   ")."')";
+                                            pdo_execute($sql)   ;
+                                        }
+                                        ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <?php endforeach; ?>
-                </div>
-                <?php endforeach; ?>
+
             </div>
-            </div>
-        
+        </div>
+
 </section>
 
 <?php

@@ -6,7 +6,7 @@
           <div class="fromtitle">
             <h4>Danh sách danh mục</h4>
           </div>
-          <a href="/44444/admin/index.php?act=adddm" class="btn btn-danger btn-sm mb-3">Thêm Danh Mục</a>
+          <a href="/duan1/admin/index.php?act=adddm" class="btn btn-danger btn-sm mb-3">Thêm Danh Mục</a>
           <div class="fromcontent">
             <div class="table-responsive dt-responsive">
               <div class="dataTables_wrapper dt-bootstrap5">

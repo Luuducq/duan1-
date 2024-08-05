@@ -64,11 +64,11 @@ if (isset($_GET['act'])) {
                  $mota = $_POST['mota'];
                 $soLuong = $_POST['soLuong'];
                 $hinh = $_FILES['hinh']['name'];
-                $target_dir = "../upload/";
-                $target_file = $target_dir . basename($_FILES['hinh']['name']);
-                
+                $target_file = "../upload/" . basename($_FILES['hinh']['name']);
                 move_uploaded_file($_FILES['hinh']['tmp_name'], $target_file);
-                insert_sanpham($tensp, $gia, $hinh,$soLuong,$mota, $iddanhmuc);
+                $sql = "INSERT INTO `sanpham` (`tensp`, `gia`, `image`, `soLuong`, `mota`, `iddanhmuc`) 
+                VALUES ('$tensp', '$gia', '$hinh', '$soLuong', '$mota', '$iddanhmuc')";
+                pdo_execute($sql);
                 $thongbao = "Thêm thành công";
             }
             $listdanhmuc = loadall_danhmuc();

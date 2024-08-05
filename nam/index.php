@@ -26,7 +26,7 @@ if((isset($_GET['act']))&&($_GET['act']!="")){
  
        $dssp=loadall_sanpham($kyw,$iddanhmuc);
        $tendm=load_tendm($iddanhmuc);
-       include "viewhahaha/sanpham.php";
+       include "page/sanpham.php";
         break;
 
 

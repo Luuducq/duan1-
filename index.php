@@ -1,10 +1,10 @@
 <?php
-require ("include/head.php");
+require ("nam/include/head.php");
 include ("../model/danhmuc.php");
 include ("../model/sanpham.php");
 include ("../model/taikhoan.php");
 include ("../model/cart.php");
-require ('include/header.php');
+require ('nam/include/header.php');
 
 //aaaaaa
 //nhóm 10
@@ -178,11 +178,11 @@ if((isset($_GET['act']))&&($_GET['act']!="")){
          include "view/cart/mybill.php";
          break; 
      default:
-     require ('include/main.php');
+     require ('nam/include/main.php');
          break;
     }
  }else{
-    require ('include/main.php');
+    require ('nam/include/main.php');
 
  }
 
@@ -190,5 +190,5 @@ if((isset($_GET['act']))&&($_GET['act']!="")){
 
  
 
-require ('include/footer.php');
+require ('nam/include/footer.php');
 ?>

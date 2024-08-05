@@ -34,7 +34,7 @@ require('../include/header.php');
                                     echo 'Tài Khoản Không Tồn Tại';
                                 } else {
                                     $_SESSION['username'] = $username;
-                                    echo '<script>location.href="/44444/nam"</script>';
+                                    echo '<script>location.href="/duan1/nam"</script>';
                                 }
                             }
                             ?>
@@ -97,7 +97,7 @@ require('../include/header.php');
                                 } else {
                                     pdo_execute("insert into taikhoan(tentk,pass,email) values('$username','".md5($password1)."','$email')"); #tạo acc
                                     $_SESSION['username'] = $username;
-                                    header('Location: /44444/nam/index.php');
+                                    header('Location: /duan1/nam/index.php');
                                 }
                             }
                             ?>

@@ -51,13 +51,10 @@
 						<div class="shopping-cart float-lg-end d-flex justify-content-start">
 
 							<div class="user-information-menu">
-								<ul>
+								<ul><?php $checkusers = pdo_query_one("select * from `taikhoan` where `tentk` = '" . $_SESSION['username'] . "' "); ?>
 									<?php if (isset($_SESSION['username'])) {
-										if ($_SESSION['role'] == 1) { ?>
-											<li><a href="duan1/admin/index.php" style="font-size: 18px; color:black; margin-top: 10px;"><?php echo $_SESSION['username'] ?> </a></li>
-											<li><a href="/duan1/nam/page/dangxuat.php" style="font-size: 18px; color:black; margin-top: 10px;">| Đăng Xuất</a></li>
-										<?php } else { ?>
-											<li><a href="#" style="font-size: 18px; color:black; margin-top: 10px;"><?php echo $_SESSION['username'] ?> </a></li>
+										if (isset($_SESSION['username'])) { ?>
+											<li><a href="<?php if($checkusers['role'] == 1) { echo '/duan1/admin/index.php'; } else { echo ""; }?>" style="font-size: 18px; color:black; margin-top: 10px;"><?php echo $_SESSION['username'] ?> </a></li>
 											<li><a href="/duan1/nam/page/dangxuat.php" style="font-size: 18px; color:black; margin-top: 10px;">| Đăng Xuất</a></li>
 										<?php }
 									} else { ?>
@@ -89,31 +86,17 @@
 									<ul>
 										<li class="active"><a href="/duan1/nam/index.php">Trang chủ</a></li>
 										<li><a href="/duan1/nam/page/gioithieu.php">Câu chuyện thương hiệu</a></li>
-										<li><a href="/duan1/nam/page/sanpham.php">Sản phẩm</a></li>
 										<li><a href="/duan1/nam/page/doitra.php">Phương tiện truyền thông</a></li>
 										<li><a href="/duan1/nam/page/lienhe.php">Liên hệ</a></li>
 
 									</ul>
 								</nav>
-
-								<!-- Mobile Menu -->
 								<div class="mobile-menu order-12 d-block d-lg-none"></div>
 
 							</div>
-
-							<!-- end of Header navigation right side-->
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- end of header navigation section -->
-
-		<!-- end of header bottom -->
 	</header>
-
-	<!--=====  End of Header  ======-->
-
-	<!--===========================================
-					=            homepage content section            =
-					============================================-->
