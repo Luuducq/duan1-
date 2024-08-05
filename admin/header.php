@@ -110,7 +110,7 @@
 
 
                         <div class="dropdown ms-sm-3 header-item topbar-user">
-                            <a href="/duan1/index.php?act=edit_taikhoan" class="btn material-shadow-none">
+                            <a href="/duan1/nam/page/edittk.php" class="btn material-shadow-none">
                                 <span class="d-flex align-items-center">
                                     <img class="rounded-circle header-profile-user" src="/duan1/admin/image/user.png" alt="User">
                                     <span class="text-start ms-xl-2">

@@ -7,7 +7,7 @@
                     <!-- footer description -->
                     <div class="footer-description">
                         <div class="footer-logo">
-                            <img width="220" height="100" src="../images/LOGO.jpg" alt="">
+                            <img width="220" height="100" src="/duan1/nam/images/LOGO.jpg" alt="">
                         </div>
                     </div>
                     <!-- end of footer description -->
