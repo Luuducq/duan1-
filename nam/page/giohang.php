@@ -26,7 +26,7 @@ require('../include/header.php');
                                                                 Zen 4 Pro</a></td>
                                                         <td class="pro-price"><span>$295.00</span></td>
                                                         <td class="pro-quantity">
-                                                            <span>1</span>
+                                                            <span class="pro-qty-cart counter"><a href="#" class="dec qty-btn-cart"></a><input type="text" value="1" class="mr-5"><a href="#" class="inc qty-btn-cart"></a></span>
                                                         </td>
                                                         <td class="pro-subtotal"><span>$295.00</span></td>
                                                         <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
@@ -34,8 +34,7 @@ require('../include/header.php');
                                                 </tbody>
                                             </table>
                                         </div>
-
-                                    </form>
+                                    x`</form>
 
                                     <div class="row">
 
@@ -88,7 +87,6 @@ require('../include/header.php');
                                             </div>
                                         </div>
 
-                                        <!-- Cart Summary -->
                                         <div class="col-lg-6 col-12 mb-40 d-flex">
                                             <div class="cart-summary">
                                                 <div class="cart-summary-wrap">
@@ -103,12 +101,8 @@ require('../include/header.php');
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
-
                                 </div>
-
-
                                 <?php
     require('../include/footer.php');
     ?>  

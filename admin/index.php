@@ -5,6 +5,7 @@ include "../model/sanpham.php";
 include "../model/taikhoan.php";
 include "../model/binhluan.php";
 include "../model/cart.php";
+include "../model/tintuc.php";
 include "header.php";
 include "nav.php";
 if (isset($_GET['act'])) {
@@ -61,7 +62,7 @@ if (isset($_GET['act'])) {
                 $iddanhmuc = $_POST['iddanhmuc'];
                 $tensp = $_POST['tensp'];
                 $gia = $_POST['gia'];
-                 $mota = $_POST['mota'];
+                $mota = $_POST['mota'];
                 $soLuong = $_POST['soLuong'];
                 $hinh = $_FILES['hinh']['name'];
                 $target_file = "../upload/" . basename($_FILES['hinh']['name']);
@@ -121,6 +122,55 @@ if (isset($_GET['act'])) {
             $listsanpham = loadall_sanpham();
             include "sanpham/list.php";
             break;
+
+
+
+
+
+        case 'dstt':
+
+            include "tintuc/listtt.php";
+            break;
+
+
+        case 'addtt':
+            // kiem tra xem ng dung co an nut hay k
+            if (isset($_POST['themmoi'])) {
+                $tieude = $_POST['tieude'];
+                $mota = $_POST['mota'];
+                $sql = "INSERT INTO `tintuc`(`tieude`, `mota`) VALUES ('$tieude','$mota')";
+                pdo_execute($sql);
+            }
+            include "tintuc/addtt.php";
+            break;
+
+        case 'xoatt':
+            if (isset($_GET['id_tt'])) {
+                $sql = "DELETE FROM `tintuc` WHERE `id_tt` = " . $_GET['id_tt'];
+                pdo_query($sql);
+            }
+            include "tintuc/listtt.php";
+            break;
+        case 'suatt':
+            $id_tt = $_GET['id_tt'];
+            $dm = pdo_query_one("SELECT * FROM `tintuc` WHERE `id_tt` = " . $_GET['id_tt']);
+            include "tintuc/updatett.php";
+            break;
+        case 'updatett':
+            if (isset($_POST['capnhat'])) {
+                $id_tt = $_POST['id_tt'];
+                $tieude = $_POST['tieude'];
+                $mota = $_POST['mota'];
+                pdo_query("UPDATE `tintuc` SET `tieude`='$tieude',`mota`='$mota ' WHERE `id_tt` = " . $id_tt);
+            }
+            include "tintuc/updatett.php";
+                        break;
+
+
+
+
+
+
 
         case 'dskh':
             $listtaikhoan = loadall_taikhoan();

@@ -29,6 +29,12 @@
             </li>
 
             <li class="nav-item">
+               <a class="nav-link menu-link" href="/duan1/admin/index.php?act=dstt">
+               <i class="fa-solid fa-newspaper"></i> <span data-key="t-authentication">Tin tức</span>
+               </a>
+            </li>
+
+            <li class="nav-item">
                <a class="nav-link menu-link" href="/duan1/admin/index.php?act=dskh">
                <i class="fa-light fa-users"></i><span data-key="t-authentication">Người dùng</span>
                </a>

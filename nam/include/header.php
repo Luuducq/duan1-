@@ -1,9 +1,5 @@
-	<!--===================================
-					=            Header            		   =
-					=====================================-->
 
 	<header>
-		<!-- header top nav -->
 		<div class="header-top-nav">
 			<div class="container">
 				<div class="row">
@@ -43,7 +39,8 @@
 						<div class="shopping-cart float-lg-end d-flex justify-content-start">
 
 							<div class="user-information-menu">
-								<ul><?php $checkusers = pdo_query_one("select * from `taikhoan` where `tentk` = '" . $_SESSION['username'] . "' "); ?>
+								<ul>
+									<?php $checkusers = pdo_query_one("select * from `taikhoan` where `tentk` = '" . $_SESSION['username'] . "' "); ?>
 									<?php if (isset($_SESSION['username'])) {
 										if (isset($_SESSION['username'])) { ?>
 											<li><a href="<?php if($checkusers['role'] == 1) { echo '/duan1/admin/index.php'; } else { echo '/duan1/nam/page/edittk.php'; }?>" style="font-size: 18px; color:black; margin-top: 10px;"><?php echo $_SESSION['username'] ?> </a></li>
@@ -57,49 +54,39 @@
 
 									<li>
 									<div class="shopping-cart float-lg-end d-flex justify-content-start" id="shopping-cart">
-                                            <div class="cart-icon">
-                                                <a href="cart.html"><img width="39" height="27" src="assets/images/icon-topcart.webp" class="img-fluid" alt=""></a>
-                                            </div>
+                                            
                                             <div class="cart-content">
-                                                <h2><a href="cart.html">Shopping Cart <span><span id="cartStatus">(Empty)</span></span></a></h2>
+                                               <p style="font-size: 20px;"><a href="/duan1/nam/page/giohang.php"><i class="fa-solid fa-cart-shopping"></i>Giỏ hàng</a></i></p>
                                             </div>
 
                                             <div class="cart-floating-box" id="cart-floating-box" style="display: none; height: 304.8px; padding-top: 20px; margin-top: 0px; padding-bottom: 20px; margin-bottom: 0px;">
                                                 <div class="cart-items">
+
+												<?php foreach(pdo_query("select * from `giohang` where `username` = '" . $_SESSION['username'] . "' limit 2 ") as $gh) {
+												$product = pdo_query_one("select * from `sanpham` where `id` = '".$gh['id_product']."'");	
+												$total = $product['gia'] * $gh['amount'];
+												$tong += $total;
+												
+												
+												?>
                                                     <div class="cart-float-single-item d-flex">
                                                         <span class="remove-item"><a href="#"><i class="fa fa-trash"></i></a></span>
                                                         <div class="cart-float-single-item-image">
-                                                            <img width="250" height="250" src="assets/images/products/faded-short-sleeve-tshirts.webp" class="img-fluid" alt="">
+                                                            <img width="250" height="250" src="/duan1/upload/<?= $product['image'] ?>" class="img-fluid" alt="">
                                                         </div>
                                                         <div class="cart-float-single-item-desc">
-                                                            <p class="product-title"><span class="count">1x</span> <a href="single-product-variable.html">Printed
-                                                                    Dress</a></p>
-                                                            <p class="size"> <a href="shop-left-sidebar.html">Yellow,
-                                                                    S</a></p>
-                                                            <p class="price">$20.50</p>
+                                                            <p class="product-title"><a href="single-product-variable.html"><?= $product['tensp'] ?></a></p>
+                                                            <p class="price" style="font-weight: bold;"><?php echo $gh['amount'] ?> x <?= number_format($product['gia']) ?></p>
                                                         </div>
                                                     </div>
-                                                    <div class="cart-float-single-item d-flex">
-                                                        <span class="remove-item"><a href="#"><i class="fa fa-trash"></i></a></span>
-                                                        <div class="cart-float-single-item-image">
-                                                            <img width="250" height="250" src="assets/images/products/faded-short-sleeve-tshirts.webp" class="img-fluid" alt="">
-                                                        </div>
-                                                        <div class="cart-float-single-item-desc">
-                                                            <p class="product-title"><span class="count">1x</span> <a href="single-product-variable.html">Printed
-                                                                    Dress</a></p>
-                                                            <p class="size"> <a href="shop-left-sidebar.html">Yellow,
-                                                                    S</a></p>
-                                                            <p class="price">$20.50</p>
-                                                        </div>
-                                                    </div>
+													<?php } ?>
                                                 </div>
-                                                <div class="cart-calculation d-flex">
-                                                    <div class="calculation-details">
-                                                        <p class="shipping">Shipping <span>$2</span></p>
-                                                        <p class="total">Total <span>$22</span></p>
+                                                <div class="cart-calculation ">
+                                                    <div class="calculation-details"style="text-align: right !important;">
+                                                        <p class="total">Tổng tiền : <span><?php echo 	number_format($tong); ?></span></p>
                                                     </div>
                                                     <div class="checkout-button">
-                                                        <a href="checkout.html">Checkout</a>
+                                                        <a href="/duan1/nam/page/giohang.php">Thanh toán</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -135,8 +122,6 @@
 										<li><a href="/duan1/nam/page/gioithieu.php">Câu chuyện thương hiệu</a></li>
 										<li><a href="/duan1/nam/page/doitra.php">Phương tiện truyền thông</a></li>
 										<li><a href="/duan1/nam/page/lienhe.php">Liên hệ</a></li>
-										<li><a href="/duan1/nam/page/giohang.php">Giỏ hàng</a></li>
-
 									</ul>
 								</nav>
 								<div class="mobile-menu order-12 d-block d-lg-none"></div>
