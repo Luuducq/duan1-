@@ -70,12 +70,12 @@
 												
 												?>
                                                     <div class="cart-float-single-item d-flex">
-                                                        <span class="remove-item"><a href="#"><i class="fa fa-trash"></i></a></span>
+                                                       
                                                         <div class="cart-float-single-item-image">
                                                             <img width="250" height="250" src="/duan1/upload/<?= $product['image'] ?>" class="img-fluid" alt="">
                                                         </div>
                                                         <div class="cart-float-single-item-desc">
-                                                            <p class="product-title"><a href="single-product-variable.html"><?= $product['tensp'] ?></a></p>
+                                                            <p class="product-title"><a href="/duan1/nam/page/spct.php?id=<?= $product['id'] ?>"><?= $product['tensp'] ?></a></p>
                                                             <p class="price" style="font-weight: bold;"><?php echo $gh['amount'] ?> x <?= number_format($product['gia']) ?></p>
                                                         </div>
                                                     </div>
@@ -91,10 +91,11 @@
                                                 </div>
                                             </div>
                                             <!-- end of shopping cart -->
-                                        </div></li>
+                                        </div>
+									
+									</li>
 
-										
-								</ul>
+									</ul>
 							</div>
 						</div>
 					</div>
