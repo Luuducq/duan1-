@@ -21,6 +21,11 @@
                  </div>
 
                  <div class="mb-3">
+                    Hình ảnh
+                    <input type="file" class="form-control" name="tieude" value="<?php if(isset($tieude)&&($tieude!="")) echo $tieude; ?>" >
+                 </div>
+
+                 <div class="mb-3">
                         Mô tả
                         <textarea name="mota" rows="4" class="form-control summernote" id="summernote" ><?php echo $mota ?></textarea>
                      </div>

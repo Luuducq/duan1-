@@ -5150,9 +5150,7 @@ h2.block-title:before, .block-title h2:before {
 =            06. Featured service            =
 =============================================*/
 /*----------  Featured service backgrounds  ----------*/
-.featured-service-bg-1 {
-  background-image: url("../images/h.jpg");
-}
+
 
 .featured-service-bg-2 {
   background-image: url("../images/ct.jpg");

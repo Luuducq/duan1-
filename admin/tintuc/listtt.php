@@ -15,6 +15,7 @@
                     <th>ID</th>
                     <th>Tiêu đề</th>
                     <th>Mô tả</th>
+                    <th>Hình ảnh</th>
                     <th>Thao tác</th>
                   </tr>
                   <?php
@@ -26,6 +27,7 @@
                     echo '<tr>
                     <td>' . $id_tt. '</td>
                     <td>' . $tieude. '</td>
+                     <td><img src="/duan1/upload/' . $img . '" style="width: 100px"></td>
                     <td>' . $mota . '</td>
                    <td>
                    <a href="' . $suatt . '" class="btn btn-sm btn-primary mb-1"><i class="fas fa-edit"></i></a>

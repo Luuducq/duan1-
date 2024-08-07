@@ -138,8 +138,10 @@ if (isset($_GET['act'])) {
             if (isset($_POST['themmoi'])) {
                 $tieude = $_POST['tieude'];
                 $mota = $_POST['mota'];
-                $sql = "INSERT INTO `tintuc`(`tieude`, `mota`) VALUES ('$tieude','$mota')";
-                pdo_execute($sql);
+                $hinh = $_FILES['hinh']['name'];
+                $target_file = "../upload/" . basename($_FILES['hinh']['name']);
+                move_uploaded_file($_FILES['hinh']['tmp_name'], $target_file);
+                pdo_execute("INSERT INTO `tintuc`(`tieude`, `mota`, `img`) VALUES ('$tieude','$mota','$hinh')");
             }
             include "tintuc/addtt.php";
             break;

@@ -7,10 +7,14 @@
                   <h2>Thêm tin tức mới</h2>
                </div>
                <div class="fromcontent">
-                  <form action="index.php?act=addtt" method="post" >
+                  <form action="index.php?act=addtt" method="post" enctype ="multipart/form-data">
                      <div class="mb-3">
                         Tiêu đề
                         <input type="text" name="tieude" class="form-control" placeholder="Nhập Tên Sản Phẩm">
+                     </div>
+                     <div class="mb-3">
+                        Tiêu đề
+                        <input type="file" name="hinh" class="form-control" placeholder="Thêm hình ảnh">
                      </div>
                      <div class="mb-3">
                         Mô tả
