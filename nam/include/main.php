@@ -64,7 +64,7 @@
                                     <div class="single-featured-service featured-service-bg-1" style="background-image: url('/duan1/upload/<?php echo $tintuc['img'] ?>');">
                                         <div class="single-featured-service-content">
                                             <h3><a
-                                                    href="/duan1/nam/page/cttintuc.php"><?php echo $tintuc['tieude'] ?></a>
+                                                    href="/duan1/nam/page/cttintuc.php">Xem Ngay</a>
                                             </h3>
                                         </div>
                                     </div>

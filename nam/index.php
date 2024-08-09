@@ -4,9 +4,8 @@ include ("../model/danhmuc.php");
 include ("../model/sanpham.php");
 include ("../model/taikhoan.php");
 include ("../model/cart.php");
+include ("../nam/lichsumua.php");
 require ('include/header.php');
-
-
 
 if((isset($_GET['act']))&&($_GET['act']!="")){
     $act=$_GET['act'];

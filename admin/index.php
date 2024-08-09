@@ -8,6 +8,22 @@ include "../model/cart.php";
 include "../model/tintuc.php";
 include "header.php";
 include "nav.php";
+
+
+function statusOrder($status) {
+    if($status == "0") {
+        return "Đơn Hàng Mới";
+    } else if($status == "1") {
+        return "Đang Xử Lý";
+    } else if($status == "2") {
+        return "Đang Giao Hàng";
+    } else if($status == "3") {
+        return "Đã Giao Hàng";
+    } else {
+        return "Hoàn Đơn";
+    }
+}
+
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
@@ -132,9 +148,18 @@ if (isset($_GET['act'])) {
             include "tintuc/listtt.php";
             break;
 
+        case 'qldh' :
+            include "donhang/list.php";
+            break;
+
+            case 'editdh' :
+                include "donhang/update.php";
+                break;
+
 
         case 'addtt':
             // kiem tra xem ng dung co an nut hay k
+            
             if (isset($_POST['themmoi'])) {
                 $tieude = $_POST['tieude'];
                 $mota = $_POST['mota'];

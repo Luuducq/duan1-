@@ -41,6 +41,12 @@
             </li>
 
             <li class="nav-item">
+               <a class="nav-link menu-link" href="/duan1/admin/index.php?act=qldh">
+               <i class="fa-light fa-users"></i><span data-key="t-authentication">Quản lý đơn hàng</span>
+               </a>
+            </li>
+
+            <li class="nav-item">
                <a class="nav-link menu-link" href="/duan1/admin/index.php?act=dsbl">
                <i class="fa-solid fa-comment"></i> <span data-key="t-authentication">Bình luận</span>
                </a>

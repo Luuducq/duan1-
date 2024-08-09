@@ -1,45 +1,23 @@
--- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
---
--- Host: localhost:3306
--- Generation Time: Aug 07, 2024 at 10:37 AM
--- Server version: 8.0.30
--- PHP Version: 8.1.10
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `duanmau`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `bill`
---
-
 CREATE TABLE `bill` (
   `id` int NOT NULL,
-  `idtk` int DEFAULT '0',
+  `idtk` varchar(999) DEFAULT NULL,
   `billname` varchar(255) NOT NULL,
-  `billdiachi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `billdiachi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `billsdt` varchar(50) NOT NULL,
   `billemail` varchar(255) NOT NULL,
-  `billpttt` tinyint(1) DEFAULT '1' COMMENT '1.Thanh toán trực tiếp 2.Chuyển khoản 3.Thanh toán online',
-  `ngaydathang` varchar(50) DEFAULT NULL,
+  `billpttt` text COMMENT '1.Thanh toán trực tiếp 2.Chuyển khoản 3.Thanh toán online',
+  `ngaydathang` varchar(999) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `total` int NOT NULL DEFAULT '0',
   `billstatus` tinyint(1) DEFAULT '0' COMMENT '0.Đơn hàng mới 1.Đang sử lý 2.Đang giao hàng 3.Đã giao hàng',
-  `receiven_ame` varchar(255) DEFAULT NULL,
-  `receiven_diachi` varchar(255) DEFAULT NULL,
+  `id_pro` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `amount` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `receiven_sdt` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -47,11 +25,16 @@ CREATE TABLE `bill` (
 -- Dumping data for table `bill`
 --
 
-INSERT INTO `bill` (`id`, `idtk`, `billname`, `billdiachi`, `billsdt`, `billemail`, `billpttt`, `ngaydathang`, `total`, `billstatus`, `receiven_ame`, `receiven_diachi`, `receiven_sdt`) VALUES
-(100, 7, 'quan', 'vinh phuc', '987654321', 'quan@gmail.com', 1, '06:07:33am  22/07/2024', 165, 0, NULL, NULL, NULL),
-(101, 7, 'quan', 'vinh phuc', '987654321', 'quan@gmail.com', 1, '11:51:18am  22/07/2024', 121, 2, NULL, NULL, NULL),
-(102, 8, 'ducduc', 'Vĩnh Phúc', '0965866805', 'luuduc@gmail.com', 2, '12:31:20pm  22/07/2024', 110, 1, NULL, NULL, NULL),
-(103, 8, 'ducduc', 'Vĩnh Phúc', '0965866805', 'luuduc@gmail.com', 2, '12:58:38pm  22/07/2024', 1120, 0, NULL, NULL, NULL);
+INSERT INTO `bill` (`id`, `idtk`, `billname`, `billdiachi`, `billsdt`, `billemail`, `billpttt`, `ngaydathang`, `total`, `billstatus`, `id_pro`, `amount`, `receiven_sdt`) VALUES
+(5, 'lumanhgioi3', 'Mạnh Dev', 'Quảng Ninh, Đông Triều', '0528139892', 'lumanhgioi.vn@gmail.com', 'Thanh toán tại nhà', '2024/08/08 18:21', 344148, 4, NULL, NULL, NULL),
+(7, 'lumanhgioi3', 'Mạnh Dev', 'Quảng Ninh, Đông Triều', '0123456789', 'lumanhgioi.vn@gmail.com', 'Thanh toán tại nhà', '2024/08/08 18:25', 344148, 2, '33', '1', NULL),
+(8, 'lumanhgioi3', 'Mạnh Dev', 'Quảng Ninh, Đông Triều', '0123456789', 'lumanhgioi.vn@gmail.com', 'Thanh toán tại nhà', '2024/08/08 18:25', 344148, 1, '32', '1', NULL),
+(9, 'lumanhgioi3', 'Mạnh Dev', 'Quảng Ninh, Đông Triều', '0123456789', 'lumanhgioi.vn@gmail.com', 'Thanh toán tại nhà', '2024/08/08 18:26', 344148, 1, '33', '1', NULL),
+(10, 'lumanhgioi3', 'Mạnh Dev', 'Quảng Ninh, Đông Triều', '0123456789', 'lumanhgioi.vn@gmail.com', 'Thanh toán tại nhà', '2024/08/08 18:26', 344148, 1, '33', '1', NULL),
+(11, 'lumanhgioi3', 'Mạnh Dev', 'Quảng Ninh, Đông Triều', '0123456789', 'lumanhgioi.vn@gmail.com', 'Thanh toán tại nhà', '2024/08/08 18:26', 344148, 1, '33', '1', NULL),
+(12, 'lumanhgioi3', 'Mạnh Dev', 'Quảng Ninh, Đông Triều', '0123456789', 'lumanhgioi.vn@gmail.com', 'Thanh toán tại nhà', '2024/08/08 18:26', 344148, 1, '32', '1', NULL),
+(13, 'lumanhgioi3', 'Vũ Đức Nam', 'Hưng Đạo - Tứ Kỳ - Hải Dương', '0338086390', 'vunam2372004@gmail.com', 'Thanh toán tại nhà', '2024/08/08 18:36', 446360, 1, '33', '1', NULL),
+(14, 'lumanhgioi3', 'Vũ Đức Nam', 'Hưng Đạo - Tứ Kỳ - Hải Dương', '0338086390', 'vunam2372004@gmail.com', 'Thanh toán tại nhà', '2024/08/08 18:36', 446360, 1, '36', '1', NULL);
 
 -- --------------------------------------------------------
 
@@ -168,7 +151,8 @@ INSERT INTO `taikhoan` (`id`, `tentk`, `pass`, `email`, `diachi`, `sdt`, `role`)
 (12, 'abc', 'c4ca4238a0b923820dcc509a6f75849b', 'vunammmmm@gmail.com', NULL, NULL, 0),
 (13, 'abcddaasfda', 'c4ca4238a0b923820dcc509a6f75849b', 'vunam2372022204@gmail.com', NULL, NULL, 0),
 (14, 'ducduc', 'c4ca4238a0b923820dcc509a6f75849b', 'namvdph47498@gmail.com', 'Hải Dương', '09999999', 1),
-(15, 'cc', '9df62e693988eb4e1e1444ece0578579', 'namvdph47498cc@gmail.com', 'Hải Dương', 'Hải Dương', 0);
+(15, 'cc', '9df62e693988eb4e1e1444ece0578579', 'namvdph47498cc@gmail.com', 'Hải Dương', 'Hải Dương', 0),
+(16, 'lumanhgioi3', 'e479d8e16237c5e2e987478e41a1fb78', 'lumanhgioi.vn@gmail.com', NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -179,12 +163,26 @@ INSERT INTO `taikhoan` (`id`, `tentk`, `pass`, `email`, `diachi`, `sdt`, `role`)
 CREATE TABLE `tintuc` (
   `id_tt` int NOT NULL,
   `tieude` text,
-  `mota` text
+  `mota` text,
+  `img` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tintuc`
+--
+
+INSERT INTO `tintuc` (`id_tt`, `tieude`, `mota`, `img`) VALUES
+(5, 'tin tức ddjsfhjdahfjsndfsfnkjdansfnsfns', '<p>hhh</p>', 'duYZVjW.png');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `bill`
+--
+ALTER TABLE `bill`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `binhluan`
@@ -228,6 +226,12 @@ ALTER TABLE `tintuc`
 --
 
 --
+-- AUTO_INCREMENT for table `bill`
+--
+ALTER TABLE `bill`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
 -- AUTO_INCREMENT for table `binhluan`
 --
 ALTER TABLE `binhluan`
@@ -243,7 +247,7 @@ ALTER TABLE `danhmuc`
 -- AUTO_INCREMENT for table `giohang`
 --
 ALTER TABLE `giohang`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `sanpham`
@@ -255,13 +259,13 @@ ALTER TABLE `sanpham`
 -- AUTO_INCREMENT for table `taikhoan`
 --
 ALTER TABLE `taikhoan`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tintuc`
 --
 ALTER TABLE `tintuc`
-  MODIFY `id_tt` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_tt` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
