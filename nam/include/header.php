@@ -15,7 +15,7 @@
 					<div class="col-lg-3 col-md-4 offset-lg-0 text-md-start text-sm-center">
 						<!-- logo -->
 						<div class="logo">
-							<a href="../index.php"><img style=" height: 150px;" src="/duan1/nam/images/LOGO.jpg" class="img-fluid" alt="logo"></a>
+							<a href="../index.php"><img style=" height: 150px;" src="/duan1/nam/images/logonew.jpg" class="img-fluid" alt="logo"></a>
 						</div>
 						<!-- end of logo -->
 					</div>

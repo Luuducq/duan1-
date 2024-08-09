@@ -70,6 +70,11 @@ if (isset($_GET['act'])) {
             include "danhmuc/list.php";
             break;
 
+            case 'khoiphuc':
+                
+                $listdanhmuc = khoiphuc($_GET['id']);
+                include "danhmuc/khoiphuc.php";
+                break;
             // san pham//
 
         case 'addsp':

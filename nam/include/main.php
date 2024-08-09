@@ -35,7 +35,7 @@
                             <div class="hero-item hero-bg-1">
                                 <div class="row align-items-center justify-content-between">
                                     <div class="hero-content col-md-8 offset-md-4 col-12 offset-0">
-                                        <h1>CODEDECO </h1>
+                                        <h1>SP10 </h1>
                                         <h2><span>CÂU CHUYỆN THƯƠNG HIỆU</span></h2>
                                         <p style="color: white;">Tạo dựng thương hiệu tinh dầu chất lượng với giá thành
                                             hợp lý, mang đến cho bạn không gian sống thư giãn mỗi ngày. </p>
@@ -46,9 +46,9 @@
                             <div class="hero-item hero-bg-2">
                                 <div class="row align-items-center justify-content-between">
                                     <div class="hero-content col-md-8 offset-md-4 col-12 offset-0">
-                                        <h1>CODEDECO</h1>
+                                        <h1>SP10</h1>
                                         <h2><span>CÂU CHUYỆN THƯƠNG HIỆU</span></h2>
-                                        <p style="color: white;">Tạo dựng thương hiệu tinh dầu chất lượng với giá thành
+                                        <p style="color: white;">Tạo dựng thương chất lượng với giá thành
                                             hợp lý, mang đến cho bạn không gian sống thư giãn mỗi ngày. </p>
                                         <a href="#" style="color: white; ">Xem thêm</a>
                                     </div>
@@ -63,9 +63,9 @@
                                 <div class="col-lg-4 col-md-6">
                                     <div class="single-featured-service featured-service-bg-1" style="background-image: url('/duan1/upload/<?php echo $tintuc['img'] ?>');">
                                         <div class="single-featured-service-content">
-                                            <h3><a
+                                            <h4><a
                                                     href="/duan1/nam/page/cttintuc.php">Xem Ngay</a>
-                                            </h3>
+                                            </h4>
                                         </div>
                                     </div>
                                 </div>
@@ -207,21 +207,19 @@
 
                         <div class="social-icons text-end mt-5">
                             <ul>
-                                <li><a class="facebook-link" href="//www.facebook.com"><i
-                                            class="fa fa-facebook"></i></a>
+                                <li><a class="facebook-link" href="#"><i class="fa-brands fa-facebook"></i></a>
                                     <span class="popup">facebook</span>
                                 </li>
-                                <li><a class="rss-link" href="//rss.com"><i class="fa fa-rss"></i></a>
+                                <li><a class="rss-link" href="#"><i class="fa fa-rss"></i></a>
                                     <span class="popup">rss</span>
                                 </li>
-                                <li><a class="twitter-link" href="//www.twitter.com"><i class="fa fa-twitter"></i></a>
+                                <li><a class="twitter-link" href="#"><i class="fa-brands fa-twitter"></i></a>
                                     <span class="popup">twitter</span>
                                 </li>
-                                <li><a class="skype-link" href="//www.skype.com"><i class="fa fa-skype"></i></a>
+                                <li><a class="skype-link" href="#"><i class="fa-brands fa-skype"></i></a>
                                     <span class="popup">Skype</span>
                                 </li>
-                                <li><a class="dribbble-link" href="//www.dribbble.com"><i
-                                            class="fa fa-dribbble"></i></a>
+                                <li><a class="dribbble-link" href="#"><i class="fa-brands fa-dribbble"></i></a>
                                     <span class="popup">Dribbble</span>
                                 </li>
                             </ul>

@@ -7,6 +7,7 @@
             <h4>Danh sách danh mục</h4>
           </div>
           <a href="/duan1/admin/index.php?act=adddm" class="btn btn-danger btn-sm mb-3">Thêm Danh Mục</a>
+          <a href="/duan1/admin/index.php?act=khoiphuc" class="btn btn-primary btn-sm mb-3">Khôi phục</a>
           <div class="fromcontent">
             <div class="table-responsive dt-responsive">
               <div class="dataTables_wrapper dt-bootstrap5">
@@ -14,7 +15,7 @@
                   <tr>
                     <th>Mã loại</th>
                     <th>Tên loại</th>
-                    <th></th>
+                    <th>Thao tác</th>
                   </tr>
                   <?php 
                   $i = 1;

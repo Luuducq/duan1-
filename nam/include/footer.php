@@ -7,7 +7,7 @@
                     <!-- footer description -->
                     <div class="footer-description">
                         <div class="footer-logo">
-                            <img width="220" height="100" src="/duan1/nam/images/LOGO.jpg" alt="">
+                            <img width="220" height="200" src="/duan1/nam/images/logonew.jpg" alt="">
                         </div>
                     </div>
                     <!-- end of footer description -->
@@ -18,12 +18,12 @@
                         <div class="col-lg-4 col-md-6">
                             <!-- single footer nav block -->
                             <div class="single-footer-nav-block">
-                                <h2 class="block-title">CODEDECO FRAGRANCE</h2>
+                                <h2 class="block-title">SP10 FRAGRANCE</h2>
                                 <ul class="footer-nav-links">
-                                    <li><a href="shop-left-sidebar.html">Người đại diện : Dương Thị Uyên Nhung</a></li>
-                                    <li><a href="shop-left-sidebar.html">Địa chỉ trụ sở: Số 70 ngõ 445 Đ.Lạc Long Quân, Q.Tây Hồ, Hà Nội</a></li>
+                                    <li><a href="shop-left-sidebar.html">Người đại diện : Vũ Đức Nam</a></li>
+                                    <li><a href="shop-left-sidebar.html">Địa chỉ trụ sở: Ô Mễ - Hưng Đạo - Tứ Kỳ - Hải Dương</a></li>
                                     <li><a href="shop-left-sidebar.html">Số đăng kí kinh doanh: 01B8021029</a></li>
-                                    <li><a href="contact.html">Hotline: 05678.83.111 – CSKH : 05678.82.111</a></li>
+                                    <li><a href="contact.html">Hotline: 0559926567 – CSKH : 0338086390</a></li>
                                     
                                 </ul>
                             </div>
@@ -37,8 +37,8 @@
                                 <ul class="footer-nav-links">
                                     <li><a href="#">Hỏi đáp - FAQs</a></li>
                                     <li><a href="#">Blogs</a></li>
-                                    <li><a href="my-account.html">Trải nghiệm mua sắm hài lòng</a></li>
-                                    <li><a href="my-account.html">Group mât mã về mùi hương</a></li>
+                                    <li><a href="#">Trải nghiệm mua sắm hài lòng</a></li>
+                                    <li><a href="#">Group mât mã về mùi hương</a></li>
                                 </ul>
                             </div>
                             <!-- end of single footer nav block -->
@@ -48,11 +48,11 @@
                             <div class="single-footer-nav-block">
                                 <h2 class="block-title">CHÍNH SÁCH BÁN HÀNG</h2>
                                 <ul class="footer-nav-links">
-                                    <li><a href="shop-left-sidebar.html">Hướng dẫn mua hàng</a></li>
-                                    <li><a href="shop-left-sidebar.html">Chính sách đổi trả hàng</a></li>
-                                    <li><a href="shop-left-sidebar.html">Điều khoản sử dụng</a></li>
-                                    <li><a href="shop-left-sidebar.html">Chính sách bảo mật thông tin cá nhân</a></li>
-                                    <li><a href="shop-left-sidebar.html">Quy định chung</a></li>
+                                    <li><a href="#">Hướng dẫn mua hàng</a></li>
+                                    <li><a href="#">Chính sách đổi trả hàng</a></li>
+                                    <li><a href="#">Điều khoản sử dụng</a></li>
+                                    <li><a href="#">Chính sách bảo mật thông tin cá nhân</a></li>
+                                    <li><a href="#">Quy định chung</a></li>
                                 </ul>
                             </div>
                             <!-- end of single footer nav block -->
@@ -71,7 +71,7 @@
             <div class="copyright-container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12">
-                        <p class="copyright-text text-center text-md-start">Copyright © 2021 <a href="#">CODE DECO</a>.
+                        <p class="copyright-text text-center text-md-start">Copyright © 2021 <a href="#">SP10</a>.
                             All Rights Reserved</p>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12">
