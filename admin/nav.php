@@ -52,11 +52,6 @@
                </a>
             </li>
 
-            <li class="nav-item">
-               <a class="nav-link menu-link" href="/duan1/admin/index.php?act=thongke">
-               <i class="fa-solid fa-chart-simple"></i> <span data-key="t-authentication">Thống kê</span>
-               </a>
-            </li>
          </ul>
       </div>
    </div>

@@ -11,37 +11,56 @@ function delete_sanpham($id)
    $sql = "delete from sanpham where id=" . $id;
    pdo_execute($sql);
 }
+
 function loadall_sanpham_top10()
 {
    $sql = "select *from sanpham where 1 order by luotxem desc limit 0,8";
    $listsanpham = pdo_query($sql);
    return $listsanpham;
 }
+
 function loadall_sanpham_home()
 {
    $sql = "select *from sanpham where 1 order by id desc limit 0,9";
    $listsanpham = pdo_query($sql);
    return $listsanpham;
 }
+
+
+
 function loadall_sanpham($kyw = "", $iddanhmuc = 0)
 {
-   $sql = "select *from sanpham where 1";
+   $sql = "SELECT * FROM sanpham 
+    LEFT JOIN danhmuc 
+    ON danhmuc.iddanhmuc = sanpham.iddanhmuc
+    WHERE 1";
    if ($kyw != "") {
       $sql .= " and tensp like '%" . $kyw . "%'";
    }
    if ($iddanhmuc > 0) {
       $sql .= " and iddanhmuc= '" . $iddanhmuc . "'";
    }
-   $sql .= " order by id desc";
+   print_r($sql);
+   $sql.=" AND danhmuc.khoiphuc = 0";
+    $sql.=" AND danhmuc.khoiphuc = 0";
+    $sql.=" ORDER BY sanpham.id desc";
    $listsanpham = pdo_query($sql);
    return $listsanpham;
 }
+
+
+
+
+
+
+
 function load_sanpham_cungloai($id, $iddanhmuc)
 {
    $sql = "select *from sanpham where iddanhmuc=" . $iddanhmuc . " AND id <>" . $id;
    $listsanpham = pdo_query($sql);
    return $listsanpham;
 }
+
 function load_tendm($iddanhmuc)
 {
    if ($iddanhmuc > 0) {
@@ -53,12 +72,14 @@ function load_tendm($iddanhmuc)
       return "";
    }
 }
+
 function loadone_sanpham($id)
 {
    $sql = "select * from sanpham where  id=" . $id;
    $sp = pdo_query_one($sql);
    return $sp;
 }
+
 function update_sanpham($id, $iddanhmuc, $tensp, $gia, $mota, $soLuong, $hinh)
 {
 

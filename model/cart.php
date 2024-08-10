@@ -98,64 +98,7 @@ foreach ($listbill as $cart) {
      <td>'.$tong.'</td>
     </tr>';
 }
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// // function get_product_by_id($idpro) {
-// //     // Code để lấy thông tin sản phẩm dựa trên $id_product
-// //     // Ví dụ: truy vấn cơ sở dữ liệu và trả về thông tin sản phẩm
-// //     $sanpham = array( 'id'=>$idpro,'soluong'=>0);
-// //     return $sanpham;
-// // }
-// function update_product_quantity($idpro, $new_quantity) {
-//     // Code để cập nhật số lượng sản phẩm dựa trên $id_product và $new_quantity
-//     // Ví dụ: cập nhật thông tin sản phẩm trong cơ sở dữ liệu
-//     echo "Cập nhật số lượng sản phẩm ID $idpro thành $new_quantity";
-// }
-// function bill_chitiet($listbill) {
-//     global $img_path;
-//     $tong = 0;
-//     $i = 0;
 
-//     echo '<table>
-//         <tr>
-//             <th>Hình ảnh</th>
-//             <th>Tên sản phẩm</th>
-//             <th>Đơn giá</th>
-//             <th>Số lượng</th>
-//             <th>Thành tiền</th>
-//         </tr>';
-
-//     foreach ($listbill as $item) {
-//         $idpro = $item['idpro'];
-//         $soluong = $item['soluong'];
-
-//         // Lấy thông tin sản phẩm từ cơ sở dữ liệu
-//         // $sanpham = get_product_by_id($idpro);
-
-//         // Cập nhật lại số lượng sản phẩm
-//         $sol = $sanpham['soluong'] - $soluong;
-//         update_product_quantity($idpro, $new_quantity);
-
-//         $hinh = $img_path . $item['image'];
-//         $tong += $item['thanhtien'];
-
-//         echo '<tr>
-//             <td><img src="' . $hinh . '" alt="" height="40px"></td>
-//             <td>' . $item['tensp'] . '</td>
-//             <td>' . $item['gia'] . '</td>
-//             <td>' . $item['soluong'] . '</td>
-//             <td>' . $item['thanhtien'] . '</td>
-//         </tr>';
-
-//         $i += 1;
-//     }
-
-//     echo '<tr>
-//         <td colspan="4">Tổng đơn hàng</td>
-//         <td>' . $tong . '</td>
-//     </tr>';
-//     echo '</table>';
-// }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function tongdonhang(){
     $tong=0;

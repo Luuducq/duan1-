@@ -2,31 +2,8 @@
 require('../include/head.php');
 require('../include/header.php'); 
 ?>
-<div class="homepage-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 mb-50">
-                <div class="row">
-                    <div class="col-lg-3 col-md-4">
-                        <div class="hero-side-category">
-                            <div class="category-toggle-wrap">
-                                <button class="category-toggle">TÀI KHOản <i class="fa-solid fa-user"></i></button>
-                            </div>
 
-                            <nav class="category-menu mb-40">
-                                <ul>
-                                    <li><a href="/duan1/nam/page/edittk.php">Thông tin tài khoản</a></li>
-                                    <li><a href="/duan1/nam/page/doimk.php">Đổi mật khẩu</a></li>
-                                    <li><a href="/duan1/nam/page/lichsumua.php">Đơn hàng</a></li>
-                                    <li><a href="/duan1/nam/page/giohang.php">Giỏ hàng</a></li>
-                                    <li><a href="/duan1/nam/page/dangxuat.php" style="color: red">Đăng xuất</a></li>
-
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="col-lg-9 col-md-8">
-                        <section class="page-content mt-50 mb-50">
+<section class="page-content mt-50 mb-50">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-12">
@@ -89,13 +66,7 @@ require('../include/header.php');
                                 </div>
                             </div>
                         </section>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-
-    </div>
-    <?php
+                        <?php
     require('../include/footer.php');
     ?>

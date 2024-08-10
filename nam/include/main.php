@@ -81,7 +81,7 @@
         <div class="vertical-product-slider-container">
 
             <div class="row">
-                <?php foreach (pdo_query("select *from danhmuc order by id desc LIMIT 6") as $categori) : ?>
+                <?php foreach (pdo_query("SELECT* FROM danhmuc WHERE `role` = 0 order by id desc LIMIT 6") as $categori) : ?>
                 <div class="col-lg-4 mb-3">
                     <div class="single-vertical-slider">
                         <h2 class="block-title vertical-slider-block-title"><?= $categori['tendanhmuc']; ?></h2>

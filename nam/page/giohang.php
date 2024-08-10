@@ -2,7 +2,11 @@
 require('../include/head.php');
 require('../include/header.php');
 ?>
+<?php if(empty($_SESSION['username'])){
 
+    echo '<script>location.href="/duan1/nam/page/dangnhap.php"</script>';
+}
+?>
 
 <div class="col-12">
     <!-- Cart Table -->
@@ -114,7 +118,7 @@ require('../include/header.php');
                         $PaymentMothod = $_POST['PaymentMothod'];
 
                         if (empty($name) || empty($phone) || empty($address) || empty($email) || empty($PaymentMothod)) {
-                            echo ('<script>alert("Thiếu Dữ Liệu")</script>');
+                         
                         } else {
 
                             foreach (pdo_query("select * from `giohang` where `username` = '" . $_SESSION['username'] . "'") as $row):
@@ -127,13 +131,15 @@ require('../include/header.php');
                     }
                     ?>
                     <div class="cart-summary-button">
-                    <a style="background: gray; padding: 10px; color: white; line-height: 50px" href="lichsumua.php">Lịch Sử Đơn Hàng</a> <button class="checkout-btn" name="thanhtoan">Thanh toán</button>
+                     <button class="checkout-btn" name="thanhtoan">Thanh toán</button>
                     </div>
                 </div>
             </div>
         </div>
     </form>
 </div>
+
+
 <?php
 require('../include/footer.php');
 ?>

@@ -1,11 +1,32 @@
 <?php
 require('../include/head.php');
-require('../include/header.php');
+require('../include/header.php'); 
 ?>
+<div class="homepage-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mb-50">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4">
+                        <div class="hero-side-category">
+                            <div class="category-toggle-wrap">
+                                <button class="category-toggle">TÀI KHOản <i class="fa-solid fa-user"></i></button>
+                            </div>
+                            
+                            <nav class="category-menu mb-40">
+                                <ul>
+                                    <li><a href="/duan1/nam/page/edittk.php">Thông tin tài khoản</a></li>
+                                    <li><a href="">Đổi mật khẩu</a></li>
+                                    <li><a href="/duan1/nam/page/lichsumua.php">Đơn hàng</a></li>
+                                    <li><a href="/duan1/nam/page/giohang.php">Giỏ hàng</a></li>
+                                    <li><a href="/duan1/nam/page/dangxuat.php" style="color: red">Đăng xuất</a></li>
 
-
-
-<div class="main-content">
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-8">
+                    <div class="main-content">
     <div class="page-content">
         <div class="container-fluid">
             <div class="row mb-3 pb-1">
@@ -18,7 +39,7 @@ require('../include/header.php');
                             <div class="dataTables_wrapper dt-bootstrap5">
                                 <table id="dom-jqry" class="table table-striped table-bordered nowrap dataTable">
                                     <tr>
-                                        <th>Tài khoản</th>
+                                        <th>Trạng thái</th>
                                         <th>Tên khách hàng</th>
                                         <th>Địa chỉ</th>
                                         <th>Số điện thoại</th>
@@ -29,18 +50,33 @@ require('../include/header.php');
                                         <th>Phương thức thanh toán</th>
                                     </tr>
                                     <?php  foreach (pdo_query("SELECT * FROM `bill` WHERE `idtk` = '".$_SESSION['username']."' ") as $kkkk) { ?>
-                    <tr>
-                    <td><?=$kkkk['idtk'];?></td>
-                    <td><?= $kkkk['billname'] ?></td>
-                    <td><?= $kkkk['billdiachi']?> </td>
-                    <td><?= $kkkk['billsdt'] ?></td>
-                    <td><?= $kkkk['billemail']?></td>
-                     <td><?= $kkkk['ngaydathang'] ?></td>
-                    <td><?= $kkkk['amount'] ?></td>
-                     <td><?= $kkkk['total'] ?></td>
-                    <td><?= $kkkk['billpttt'] ?></td>
-                </tr>
-                  <?php }
+                                    <tr>
+                                        <?php if ($kkkk['billstatus'] == 0) { ?>
+                                        <td>Chờ xác nhận</td>
+                                        <?php } ?>
+                                        <?php if ($kkkk['billstatus'] == 1) { ?>
+                                        <td>Đang xử lý</td>
+                                        <?php } ?>
+                                        <?php if ($kkkk['billstatus'] == 2) { ?>
+                                        <td>Đang giao hàng</td>
+                                        <?php } ?>
+                                        <?php if ($kkkk['billstatus'] == 3) { ?>
+                                        <td>Đã giao</td>
+                                        <?php } ?>
+                                        <?php if ($kkkk['billstatus'] == 4) { ?>
+                                        <td>Hoàn đơn</td>
+                                        <?php } ?>
+
+                                        <td><?= $kkkk['billname'] ?></td>
+                                        <td><?= $kkkk['billdiachi']?> </td>
+                                        <td><?= $kkkk['billsdt'] ?></td>
+                                        <td><?= $kkkk['billemail']?></td>
+                                        <td><?= $kkkk['ngaydathang'] ?></td>
+                                        <td><?= $kkkk['amount'] ?></td>
+                                        <td><?= number_format($kkkk['total'])  ?></td>
+                                        <td><?= $kkkk['billpttt'] ?></td>
+                                    </tr>
+                                    <?php }
                   ?>
 
                                 </table>
@@ -49,105 +85,120 @@ require('../include/header.php');
                     </div>
                 </div>
             </div>
- </div>
-
- <footer>
-    <div class="container">
-        <!-- footer navigation -->
-        <div class="footer-navigation section-padding">
-            <div class="row">
-                <div class="col-lg-4 col-md-4">
-                    <!-- footer description -->
-                    <div class="footer-description">
-                        <div class="footer-logo">
-                            <img width="220" height="100" src="/duan1/nam/images/LOGO.jpg" alt="">
-                        </div>
+        </div>
                     </div>
-                    <!-- end of footer description -->
-                </div>
-                <div class="col-lg-8 col-md-8">
-                    <!-- footer nav links -->
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6">
-                            <!-- single footer nav block -->
-                            <div class="single-footer-nav-block">
-                                <h2 class="block-title">CODEDECO FRAGRANCE</h2>
-                                <ul class="footer-nav-links">
-                                    <li><a href="shop-left-sidebar.html">Người đại diện : Dương Thị Uyên Nhung</a></li>
-                                    <li><a href="shop-left-sidebar.html">Địa chỉ trụ sở: Số 70 ngõ 445 Đ.Lạc Long Quân, Q.Tây Hồ, Hà Nội</a></li>
-                                    <li><a href="shop-left-sidebar.html">Số đăng kí kinh doanh: 01B8021029</a></li>
-                                    <li><a href="contact.html">Hotline: 05678.83.111 – CSKH : 05678.82.111</a></li>
-                                    
-                                </ul>
-                            </div>
-                            <!-- end of single footer nav block -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <!-- single footer nav block -->
-                            <div class="single-footer-nav-block">
-                                <h2 class="block-title"><a href="my-account.html">CHĂM SÓC KHÁCH HÀNG</a>
-                                </h2>
-                                <ul class="footer-nav-links">
-                                    <li><a href="#">Hỏi đáp - FAQs</a></li>
-                                    <li><a href="#">Blogs</a></li>
-                                    <li><a href="my-account.html">Trải nghiệm mua sắm hài lòng</a></li>
-                                    <li><a href="my-account.html">Group mât mã về mùi hương</a></li>
-                                </ul>
-                            </div>
-                            <!-- end of single footer nav block -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <!-- single footer nav block -->
-                            <div class="single-footer-nav-block">
-                                <h2 class="block-title">CHÍNH SÁCH BÁN HÀNG</h2>
-                                <ul class="footer-nav-links">
-                                    <li><a href="shop-left-sidebar.html">Hướng dẫn mua hàng</a></li>
-                                    <li><a href="shop-left-sidebar.html">Chính sách đổi trả hàng</a></li>
-                                    <li><a href="shop-left-sidebar.html">Điều khoản sử dụng</a></li>
-                                    <li><a href="shop-left-sidebar.html">Chính sách bảo mật thông tin cá nhân</a></li>
-                                    <li><a href="shop-left-sidebar.html">Quy định chung</a></li>
-                                </ul>
-                            </div>
-                            <!-- end of single footer nav block -->
-                        </div>
-                       
-                    </div>
-                    <!-- end of footer nav links -->
-
                 </div>
             </div>
         </div>
-        <!-- end of footer navigation -->
 
-        <!-- copyright section -->
-        <div class="copyright-section">
-            <div class="copyright-container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <p class="copyright-text text-center text-md-start">Copyright © 2021 <a href="#">CODE DECO</a>.
-                            All Rights Reserved</p>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="payment-logos text-md-end text-center">
-                            <img width="252" height="28" src="images/payment.webp" alt="payment logo">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end of copyright section -->
-        </div>
+      
     </div>
-</footer>
 
-<!--====  End of footer  ====-->
-</div>
+
+
+
+
+        <footer>
+            <div class="container">
+                <!-- footer navigation -->
+                <div class="footer-navigation section-padding">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <!-- footer description -->
+                            <div class="footer-description">
+                                <div class="footer-logo">
+                                    <img width="220" height="200" src="/duan1/nam/images/logonew.jpg" alt="">
+                                </div>
+                            </div>
+                            <!-- end of footer description -->
+                        </div>
+                        <div class="col-lg-8 col-md-8">
+                            <!-- footer nav links -->
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6">
+                                    <!-- single footer nav block -->
+                                    <div class="single-footer-nav-block">
+                                        <h2 class="block-title">SP10 FRAGRANCE</h2>
+                                        <ul class="footer-nav-links">
+                                            <li><a href="shop-left-sidebar.html">Người đại diện : Vũ Đức Nam</a></li>
+                                            <li><a href="shop-left-sidebar.html">Địa chỉ trụ sở: Ô Mễ - Hưng Đạo - Tứ Kỳ
+                                                    - Hải Dương</a></li>
+                                            <li><a href="shop-left-sidebar.html">Số đăng kí kinh doanh: 01B8021029</a>
+                                            </li>
+                                            <li><a href="contact.html">Hotline: 0559926567 – CSKH : 0338086390</a></li>
+
+                                        </ul>
+                                    </div>
+                                    <!-- end of single footer nav block -->
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <!-- single footer nav block -->
+                                    <div class="single-footer-nav-block">
+                                        <h2 class="block-title"><a href="my-account.html">CHĂM SÓC KHÁCH HÀNG</a>
+                                        </h2>
+                                        <ul class="footer-nav-links">
+                                            <li><a href="#">Hỏi đáp - FAQs</a></li>
+                                            <li><a href="#">Blogs</a></li>
+                                            <li><a href="#">Trải nghiệm mua sắm hài lòng</a></li>
+                                            <li><a href="#">Group mât mã về mùi hương</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- end of single footer nav block -->
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <!-- single footer nav block -->
+                                    <div class="single-footer-nav-block">
+                                        <h2 class="block-title">CHÍNH SÁCH BÁN HÀNG</h2>
+                                        <ul class="footer-nav-links">
+                                            <li><a href="#">Hướng dẫn mua hàng</a></li>
+                                            <li><a href="#">Chính sách đổi trả hàng</a></li>
+                                            <li><a href="#">Điều khoản sử dụng</a></li>
+                                            <li><a href="#">Chính sách bảo mật thông tin cá nhân</a></li>
+                                            <li><a href="#">Quy định chung</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- end of single footer nav block -->
+                                </div>
+
+                            </div>
+                            <!-- end of footer nav links -->
+
+                        </div>
+                    </div>
+                </div>
+                <!-- end of footer navigation -->
+
+                <!-- copyright section -->
+                <div class="copyright-section">
+                    <div class="copyright-container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <p class="copyright-text text-center text-md-start">Copyright © 2021 <a
+                                        href="#">SP10</a>.
+                                    All Rights Reserved</p>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="payment-logos text-md-end text-center">
+                                    <img width="252" height="28" src="images/payment.webp" alt="payment logo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end of copyright section -->
+                </div>
+            </div>
+        </footer>
+
+        <!--====  End of footer  ====-->
+    </div>
 </div>
 </div>
 </div>
 
 
 <!-- quick view modal -->
-<div class="modal fade quick-view-modal-container" id="quick-view-modal-container" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade quick-view-modal-container" id="quick-view-modal-container" tabindex="-1" role="dialog"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -160,28 +211,32 @@ require('../include/header.php');
                         <!-- product quickview image gallery -->
                         <!--Modal Tab Content Start-->
                         <div class="tab-content product-details-large" id="myTabContent">
-                            <div class="tab-pane fade show active" id="single-slide1" role="tabpanel" aria-labelledby="single-slide-tab-1">
+                            <div class="tab-pane fade show active" id="single-slide1" role="tabpanel"
+                                aria-labelledby="single-slide-tab-1">
                                 <!--Single Product Image Start-->
                                 <div class="single-product-img img-full">
                                     <img width="458" height="458" src="images/image1.webp" class="img-fluid" alt="">
                                 </div>
                                 <!--Single Product Image End-->
                             </div>
-                            <div class="tab-pane fade" id="single-slide2" role="tabpanel" aria-labelledby="single-slide-tab-2">
+                            <div class="tab-pane fade" id="single-slide2" role="tabpanel"
+                                aria-labelledby="single-slide-tab-2">
                                 <!--Single Product Image Start-->
                                 <div class="single-product-img img-full">
                                     <img width="458" height="458" src="images/image2.webp" class="img-fluid" alt="">
                                 </div>
                                 <!--Single Product Image End-->
                             </div>
-                            <div class="tab-pane fade" id="single-slide3" role="tabpanel" aria-labelledby="single-slide-tab-3">
+                            <div class="tab-pane fade" id="single-slide3" role="tabpanel"
+                                aria-labelledby="single-slide-tab-3">
                                 <!--Single Product Image Start-->
                                 <div class="single-product-img img-full">
                                     <img width="458" height="458" src="images/image3.webp" class="img-fluid" alt="">
                                 </div>
                                 <!--Single Product Image End-->
                             </div>
-                            <div class="tab-pane fade" id="single-slide4" role="tabpanel" aria-labelledby="single-slide-tab-4">
+                            <div class="tab-pane fade" id="single-slide4" role="tabpanel"
+                                aria-labelledby="single-slide-tab-4">
                                 <!--Single Product Image Start-->
                                 <div class="single-product-img img-full">
                                     <img width="458" height="458" src="images/image4.webp" class="img-fluid" alt="">
@@ -194,16 +249,24 @@ require('../include/header.php');
                         <div class="single-product-menu">
                             <div class="nav single-slide-menu" role="tablist">
                                 <div class="single-tab-menu img-full">
-                                    <a data-bs-toggle="tab" id="single-slide-tab-1" href="#single-slide1"><img width="458" height="458" src="images/image1.webp" class="img-fluid" alt=""></a>
+                                    <a data-bs-toggle="tab" id="single-slide-tab-1" href="#single-slide1"><img
+                                            width="458" height="458" src="images/image1.webp" class="img-fluid"
+                                            alt=""></a>
                                 </div>
                                 <div class="single-tab-menu img-full">
-                                    <a data-bs-toggle="tab" id="single-slide-tab-2" href="#single-slide2"><img width="458" height="458" src="images/image2.webp" class="img-fluid" alt=""></a>
+                                    <a data-bs-toggle="tab" id="single-slide-tab-2" href="#single-slide2"><img
+                                            width="458" height="458" src="images/image2.webp" class="img-fluid"
+                                            alt=""></a>
                                 </div>
                                 <div class="single-tab-menu img-full">
-                                    <a data-bs-toggle="tab" id="single-slide-tab-3" href="#single-slide3"><img width="458" height="458" src="images/image3.webp" class="img-fluid" alt=""></a>
+                                    <a data-bs-toggle="tab" id="single-slide-tab-3" href="#single-slide3"><img
+                                            width="458" height="458" src="images/image3.webp" class="img-fluid"
+                                            alt=""></a>
                                 </div>
                                 <div class="single-tab-menu img-full">
-                                    <a data-bs-toggle="tab" id="single-slide-tab-4" href="#single-slide4"><img width="458" height="458" src="images/image4.webp" class="img-fluid" alt=""></a>
+                                    <a data-bs-toggle="tab" id="single-slide-tab-4" href="#single-slide4"><img
+                                            width="458" height="458" src="images/image4.webp" class="img-fluid"
+                                            alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -252,7 +315,8 @@ require('../include/header.php');
                                 <a href="#"><span class="color-block color-choice-3 active"></span></a>
                             </p>
 
-                            <a href="#" class="add-to-cart-btn" data-bs-toggle="modal" data-bs-target="#add-to-cart-modal-container"><i class="fa fa-shopping-cart"></i>
+                            <a href="#" class="add-to-cart-btn" data-bs-toggle="modal"
+                                data-bs-target="#add-to-cart-modal-container"><i class="fa fa-shopping-cart"></i>
                                 Add to Cart</a>
                         </div>
                         <!-- end of product quick view description -->
@@ -267,7 +331,8 @@ require('../include/header.php');
 
 
 <!-- add to cart modal -->
-<div class="modal fade add-to-cart-modal-container" id="add-to-cart-modal-container" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade add-to-cart-modal-container" id="add-to-cart-modal-container" tabindex="-1" role="dialog"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -283,7 +348,8 @@ require('../include/header.php');
                             <h2 class="cart-success-message"> Product successfully added to your shopping cart</h2>
                             <div class="cart-product-short-desc-content d-flex">
                                 <div class="product-image">
-                                    <img width="250" height="250" src="images/faded-short-sleeve-tshirts.webp" class="img-fluid" alt="">
+                                    <img width="250" height="250" src="images/faded-short-sleeve-tshirts.webp"
+                                        class="img-fluid" alt="">
                                 </div>
                                 <div class="product-desc">
                                     <h4 class="product-title">Printed Dress</h4>
@@ -309,10 +375,12 @@ require('../include/header.php');
 
                         <!-- cart modal buttons -->
                         <div class="cart-modal-buttons">
-                            <a class="continue-shopping-btn" href="shop-left-sidebar.html"><i class="fa fa-chevron-left"></i>
+                            <a class="continue-shopping-btn" href="shop-left-sidebar.html"><i
+                                    class="fa fa-chevron-left"></i>
                                 Continue
                                 shopping</a>
-                            <a class="proceed-checkout-btn" href="checkout.html">Proceed to checkout <i class="fa fa-chevron-right"></i>
+                            <a class="proceed-checkout-btn" href="checkout.html">Proceed to checkout <i
+                                    class="fa fa-chevron-right"></i>
                             </a>
                         </div>
                         <!-- end of cart modal buttons -->

@@ -31,6 +31,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+    <?php if(empty($_SESSION['username'])) { 
+        header('location:/');
+    }?>
+
     <style>
         footer {
             position: absolute;
@@ -108,9 +113,8 @@
 
 
 
-
                         <div class="dropdown ms-sm-3 header-item topbar-user">
-                            <a href="/duan1/nam/page/edittk.php" class="btn material-shadow-none">
+                            <a href="/duan1/nam/page/tkadmin.php" class="btn material-shadow-none">
                                 <span class="d-flex align-items-center">
                                     <img class="rounded-circle header-profile-user" src="/duan1/admin/image/user.png" alt="User">
                                     <span class="text-start ms-xl-2">
