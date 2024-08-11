@@ -45,9 +45,8 @@ require('../include/header.php');
                                         <th>Số điện thoại</th>
                                         <th>Email</th>
                                         <th>Ngày đặt hàng</th>
-                                        <th>Số lượng</th>
-                                        <th>Tổng tiền</th>
                                         <th>Phương thức thanh toán</th>
+                                        <th>Thao tác</th>
                                     </tr>
                                     <?php  foreach (pdo_query("SELECT * FROM `bill` WHERE `idtk` = '".$_SESSION['username']."' ") as $kkkk) { ?>
                                     <tr>
@@ -70,11 +69,10 @@ require('../include/header.php');
                                         <td><?= $kkkk['billname'] ?></td>
                                         <td><?= $kkkk['billdiachi']?> </td>
                                         <td><?= $kkkk['billsdt'] ?></td>
-                                        <td><?= $kkkk['billemail']?></td>
+                                        <td><?= $kkkk['billemail']?></td>   
                                         <td><?= $kkkk['ngaydathang'] ?></td>
-                                        <td><?= $kkkk['amount'] ?></td>
-                                        <td><?= number_format($kkkk['total'])  ?></td>
                                         <td><?= $kkkk['billpttt'] ?></td>
+                                        <td> <a href="/duan1/nam/page/ctdonhang.php?id=<?= $kkkk['id'] ?>" class="btn btn-primary btn-sm mb-3">Chi tiết đơn</a> </td>
                                     </tr>
                                     <?php }
                   ?>

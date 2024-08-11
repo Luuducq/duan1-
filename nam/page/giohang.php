@@ -1,6 +1,7 @@
 <?php
 require('../include/head.php');
 require('../include/header.php');
+
 ?>
 <?php if(empty($_SESSION['username'])){
 
@@ -32,33 +33,48 @@ require('../include/header.php');
                         $nhanVat += $total * 0.012;
                         $tongthanhtoan += $total + $nhanVat;
                     ?>
-                        <td class="pro-thumbnail"><a href="/duan1/nam/page/spct.php?id=<?= $product['id'] ?>"><img
-                                    width="250" height="250" src="/duan1/upload/<?= $product['image'] ?>" class="img-fluid"
-                                    alt=""></a></td>
-                        <td class="pro-title"><a
-                                href="/duan1/nam/page/spct.php?id=<?= $product['id'] ?>"><?= $product['tensp'] ?></a>
-                        </td>
-                        <td class="pro-price"><span><?= number_format($product['gia']) ?></span></td>
-                        <td class="pro-quantity">
-                            <span class="pro-qty-cart counter"><a href="#" class="dec qty-btn-cart"></a><input type="text"
-                                    value="<?php echo $gh['amount'] ?>" class="mr-5"><a href="#"
-                                    class="inc qty-btn-cart"></a></span>
-                        </td>
-                        <td class="pro-subtotal"><span><?php echo number_format($total) ?>đ</span></td>
+                    <td class="pro-thumbnail"><a href="/duan1/nam/page/spct.php?id=<?= $product['id'] ?>"><img
+                                width="250" height="250" src="/duan1/upload/<?= $product['image'] ?>" class="img-fluid"
+                                alt=""></a></td>
+                    <td class="pro-title"><a
+                            href="/duan1/nam/page/spct.php?id=<?= $product['id'] ?>"><?= $product['tensp'] ?></a>
+                    </td>
+                    <td class="pro-price"><span><?= number_format($product['gia']) ?></span></td>
+                    <td class="pro-quantity">
+                        <span class="pro-qty-cart counter">
+                            <a href="#" class="dec qty-btn-cart"></a>
+                            <input type="text" value="<?php echo $gh['amount'] ?>" class="mr-5" id="quantity-input">
+                            <a href="#" class="inc qty-btn-cart"></a>
+                        </span>
+                    </td>
 
-                        <form action="" method="POST">
-                            <td class="pro-remove"><button type="submit" name="xoa_<?= $gh['id'] ?>"><i
-                                        class="fa fa-trash-o"></i>Xóa</button></td>
-                        </form>
-                        <?php
+                    <script>
+                    const quantityInput = document.getElementById('quantity-input');
+                    quantityInput.addEventListener('input', function() {
+                        let value = parseInt(quantityInput.value, 10);
+                        if (isNaN(value) || value < 0) {
+                            quantityInput.value = 0;
+                        }
+                    });
+                    </script>
+
+
+
+                    <td class="pro-subtotal"><span><?php echo number_format($total) ?>VND</span></td>
+
+                    <form action="" method="POST">
+                        <td class="pro-remove"><button type="submit" name="xoa_<?= $gh['id'] ?>"><i
+                                    class="fa fa-trash-o"></i>Xóa</button></td>
+                    </form>
+                    <?php
                         if (isset($_POST['xoa_' . $gh['id']])) {
-                            $sql = "delete from `giohang` where `id` = '" . $gh['id'] . "'";
+                            $sql = "DELETE FROM `giohang` WHERE `id` = '" . $gh['id'] . "'";
                             pdo_execute($sql);
                             header("location: /duan1/nam/page/giohang.php");
                         }
                         ?>
                 </tr>
-            <?php } ?>
+                <?php } ?>
             </tbody>
         </table>
     </div>
@@ -69,16 +85,20 @@ require('../include/header.php');
                     <h4>Địa chỉ nhận hàng </h4>
                     <div class="row">
                         <div class="col-md-6 col-12 mb-25">
-                            <input type="text" placeholder="Tên khách hàng" name="name" class="form-control" value="<?= ($_POST['name'] ?? ''); ?>" require>
+                            <input type="text" placeholder="Tên khách hàng" name="name" class="form-control"
+                                value="<?= ($_POST['name'] ?? ''); ?>" require>
                         </div>
                         <div class="col-md-6 col-12 mb-25">
-                            <input type="number" placeholder="Số điện thoại" name="phone" class="form-control" value="<?= ($_POST['phone'] ?? ''); ?>" require>
+                            <input type="number" placeholder="Số điện thoại" name="phone" class="form-control"
+                                value="<?= ($_POST['phone'] ?? ''); ?>" require>
                         </div>
                         <div class="col-md-12 col-12 mb-25">
-                            <input type="text" placeholder="Địa chỉ" name="address" class="form-control" value="<?= ($_POST['address'] ?? ''); ?>" require>
+                            <input type="text" placeholder="Địa chỉ" name="address" class="form-control"
+                                value="<?= ($_POST['address'] ?? ''); ?>" require>
                         </div>
                         <div class="col-md-12 col-12 mb-25">
-                            <input type="email" placeholder="Email" name="email" class="form-control" value="<?= ($_POST['email'] ?? ''); ?>" require>
+                            <input type="email" placeholder="Email" name="email" class="form-control"
+                                value="<?= ($_POST['email'] ?? ''); ?>" require>
                         </div>
                     </div>
                 </div>
@@ -95,7 +115,8 @@ require('../include/header.php');
                     <div class="cart-summary-wrap">
                         <h4>Phương thức thanh toán</h4>
                         <div class="custom-control custom-radio d-flex mb-0">
-                            <input type="radio" name="PaymentMothod" id="banking" class="custom-control-input" value="Chuyển Khoản Ngân Hàng" checked style="margin-right:15px">
+                            <input type="radio" name="PaymentMothod" id="banking" class="custom-control-input"
+                                value="Chuyển Khoản Ngân Hàng" checked style="margin-right:15px">
                             <label for="banking" class="custom-control-label ManhDev-Label-Payment"><i
                                     class="fa-solid fa-money-check-dollar" style="font-size:20px"></i><span
                                     style="font-size: 20px;margin-left:15px">Chuyển Khoản Ngân
@@ -103,9 +124,11 @@ require('../include/header.php');
                         </div>
 
                         <div class="custom-control custom-radio d-flex mb-0">
-                            <input type="radio" name="PaymentMothod" id="tainha" class="custom-control-input" value="Thanh toán tại nhà" checked style="margin-right:15px">
+                            <input type="radio" name="PaymentMothod" id="tainha" class="custom-control-input"
+                                value="Thanh toán tại nhà" checked style="margin-right:15px">
                             <label for="tainha" class="custom-control-label "><i class="fa-solid fa-building-columns"
-                                    style="font-size:20px"></i><span style="font-size: 20px;;margin-left:15px">Thanh toán
+                                    style="font-size:20px"></i><span style="font-size: 20px;;margin-left:15px">Thanh
+                                    toán
                                     tại nhà</span></label>
                         </div>
                     </div>
@@ -131,7 +154,7 @@ require('../include/header.php');
                     }
                     ?>
                     <div class="cart-summary-button">
-                     <button class="checkout-btn" name="thanhtoan">Thanh toán</button>
+                        <button class="checkout-btn" name="thanhtoan">Thanh toán</button>
                     </div>
                 </div>
             </div>
