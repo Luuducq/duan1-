@@ -40,7 +40,6 @@ function loadall_sanpham($kyw = "", $iddanhmuc = 0)
    if ($iddanhmuc > 0) {
       $sql .= " and iddanhmuc= '" . $iddanhmuc . "'";
    }
-   print_r($sql);
    $sql.=" AND danhmuc.khoiphuc = 0";
     $sql.=" AND danhmuc.khoiphuc = 0";
     $sql.=" ORDER BY sanpham.id desc";

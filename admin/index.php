@@ -42,7 +42,7 @@ if (isset($_GET['act'])) {
             include "danhmuc/add.php";
             break;
         case 'dsdm':
-            $sql = "select *from danhmuc order by id desc";
+            $sql = "SELECT * FROM danhmuc order by id desc";
             $listdanhmuc = loadall_danhmuc();
             include "danhmuc/list.php";
             break;
@@ -97,17 +97,8 @@ if (isset($_GET['act'])) {
             include "sanpham/add.php";
             break;
         case 'dssp':
-            // $sql="select *from sanpham order by id desc";
-            if (isset($_POST['listok']) && ($_POST['listok'])) {
-                $kyw = $_POST['kyw'];
-                $iddanhmuc = $_POST['iddanhmuc'];
-            } else {
-                $kyw = "";
-                $iddanhmuc = 0;
-            }
-            $listdanhmuc = loadall_danhmuc();
-            $listsanpham = loadall_sanpham($kyw, $iddanhmuc);
-            include "sanpham/list.php";
+           include "sanpham/list.php";
+           break;
             break;
         case 'xoasp':
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
@@ -212,6 +203,12 @@ if (isset($_GET['act'])) {
             $listbinhluan = loadall_binhluan(0);
             include "binhluan/list.php";
             break;
+            
+        case 'anbl':
+                
+                $listdanhmuc = anbl($_GET['id']);
+                include "binhluan/anbl.php";
+                break;
         case 'thongke':
             $listthongke = loadall_thongke();
             $listbill = loadall_bill(0);

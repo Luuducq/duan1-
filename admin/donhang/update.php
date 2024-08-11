@@ -11,21 +11,60 @@
 
                         <div class="from-group mb-2">
                             Tình trạng đơn hàng mới :
-                            <select name="status" id="" class="form-control"> 
+                            <select name="status" id="" class="form-control">
 
-                            <?php if ($rowww['status'] == 0) { ?>
-                                <option value="0" <?php if($rowww['billstatus'] == "0") { echo "selected"; } ?>>Đơn hàng mới</option>                               
-                                <option value="1" <?php if($rowww['billstatus'] == "1") { echo "selected"; } ?>>Đang xử lý</option>
-                                <option value="2" <?php if($rowww['billstatus'] == "2") { echo "selected"; } ?>>Đang giao hàng</option>
-                                <option value="3" <?php if($rowww['billstatus'] == "3") { echo "selected"; } ?>>Đã giao</option>
-                                <option value="4" <?php if($rowww['billstatus'] == "4") { echo "selected"; } ?>>Hoàn đơn</option>
+                                <?php if ($rowww['billstatus'] == 0) { ?>
+                                <option value="0" <?php if($rowww['billstatus'] == "0") { echo "selected"; } ?>>Đơn hàng
+                                    mới</option>
+                                <option value="1" <?php if($rowww['billstatus'] == "1") { echo "selected"; } ?>>Đang xử
+                                    lý</option>
+                                <option value="2" <?php if($rowww['billstatus'] == "2") { echo "selected"; } ?>>Đang
+                                    giao hàng</option>
+                                <option value="3" <?php if($rowww['billstatus'] == "3") { echo "selected"; } ?>>Đã giao
+                                </option>
+                                <option value="4" <?php if($rowww['billstatus'] == "4") { echo "selected"; } ?>>Hoàn đơn
+                                </option>
+                                <?php } 
+                                
+                                else if ($rowww['billstatus'] == 1) { ?>
+                                <option value="1" <?php if($rowww['billstatus'] == "1") { echo "selected"; } ?>>Đang xử
+                                    lý</option>
+                                <option value="2" <?php if($rowww['billstatus'] == "2") { echo "selected"; } ?>>Đang
+                                    giao hàng</option>
+                                <option value="3" <?php if($rowww['billstatus'] == "3") { echo "selected"; } ?>>Đã giao
+                                </option>
+                                <option value="4" <?php if($rowww['billstatus'] == "4") { echo "selected"; } ?>>Hoàn đơn
+                                </option>
+                                <?php } 
+                                    
+                                    else if ($rowww['billstatus'] == 2) { ?>
+
+                                <option value="2" <?php if($rowww['billstatus'] == "2") { echo "selected"; } ?>>Đang
+                                    giao hàng</option>
+                                <option value="3" <?php if($rowww['billstatus'] == "3") { echo "selected"; } ?>>Đã giao
+                                </option>
+                                <option value="4" <?php if($rowww['billstatus'] == "4") { echo "selected"; } ?>>Hoàn đơn
+                                </option>
+                                <?php } 
+                                    
+                                    else if ($rowww['billstatus'] == 3) { ?>
+
+                                <option value="3" <?php if($rowww['billstatus'] == "3") { echo "selected"; } ?>>Đã giao
+                                </option>
+                                <option value="4" <?php if($rowww['billstatus'] == "4") { echo "selected"; } ?>>Hoàn đơn
+                                </option>
+                                <?php } else {
+                                    ?>
+                                <option value="4" <?php if($rowww['billstatus'] == "4") { echo "selected"; } ?>>Hoàn đơn
+                                </option>
                                 <?php } ?>
                             </select>
                         </div>
 
                         <div class="mb-3">
                             <button type="submit" class="btn btn-primary" name="capnhat">Cập nhật</button>
-                            <a href="index.php?act=qldh"><input type="button" class="btn btn-info" value="Danh sách"></a>
+                            <a href="index.php?act=qldh"><input type="button" class="btn btn-info"
+                                    value="Danh sách"></a>
 
                         </div>
                         <?php

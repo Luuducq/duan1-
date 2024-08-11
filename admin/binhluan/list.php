@@ -21,15 +21,16 @@
                   $i = 1;
                   foreach (loadall_binhluan(0) as $binhluan) {
                     extract($binhluan);
-                    $suadm = "index.php?act=suadm&id=" . $id;
-                    $xoadm = "index.php?act=xoadm&id=" . $id;
+                    $anbl = "index.php?act=anbl&id=" . $id;
+                   
                     echo '<tr>
                     <td>' . $i++ . '</td>
                     <td>' . $noidung . '</td>
                     <td>' . $idtk . '</td>
                     <td>' . $idpro . '</td>
                     <td>' . $ngaybinhluan . '</td>
-                </tr>';
+                   
+                    </tr>';
                   }
                   ?>
 
