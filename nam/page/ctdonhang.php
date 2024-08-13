@@ -22,7 +22,7 @@
                                         <th>Hình</th>
                                         <th>Số lượng</th>
                                         <th>Giá</th>
-                                        <th>Tổng tiền</th>
+                                       
                                     </tr>
                     <?php
                     $i = 1;
@@ -31,10 +31,10 @@
                     <tr>
                     <td><?=$id_pro;?></td>
                     <td><?=pdo_query_one("SELECT * FROM `sanpham` WHERE `id` = '".$id_pro."' ")['tensp'];?></td>
-                    <td><img src="../../upload/<?=pdo_query_one("SELECT * FROM `sanpham` WHERE `id` = '".$id_pro."' ")['image']?>" style="width: 100px"></td>
+                    <td><img src="/duan1/upload/<?=pdo_query_one("SELECT * FROM `sanpham` WHERE `id` = '".$id_pro."' ")['image']?>" style="width: 100px"></td>
                     <td><?=$amount;?></td>
                     <td><?=number_format(pdo_query_one("SELECT * FROM `sanpham` WHERE `id` = '".$id_pro."' ")['gia']);?>đ</td>
-                    <td><?=number_format($total);?>đ</td>
+                   
                     </tr>
                     <?php }
                     ?>

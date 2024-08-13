@@ -90,7 +90,7 @@
                             <div class="single-vertical-product d-flex">
                                 <div class="product-image">
                                     <a href="/duan1/nam/page/spct.php?id=<?= $product['id'] ?>"><img
-                                            style="witdh:100px; height:100px" src="../upload/<?= $product['image'] ?>"
+                                            style="witdh:100px; height:100px" src="/duan1/upload/<?= $product['image'] ?>"
                                             class="img-fluid" alt=""></a>
                                 </div>
                                 <div class="product-description">

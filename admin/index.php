@@ -99,7 +99,6 @@ if (isset($_GET['act'])) {
         case 'dssp':
            include "sanpham/list.php";
            break;
-            break;
         case 'xoasp':
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 delete_sanpham($_GET['id']);
@@ -189,11 +188,16 @@ if (isset($_GET['act'])) {
             include "tintuc/updatett.php";
                         break;
 
+///tai khoản
+     case 'xoatk':
+         if (isset($_GET['id'])) {
+           delete_taikhoan($_GET['id']);
+        }
+           $listtaikhoan = loadall_taikhoan();
+          include "taikhoan/list.php";
 
 
-
-
-
+    break;
 
         case 'dskh':
             $listtaikhoan = loadall_taikhoan();

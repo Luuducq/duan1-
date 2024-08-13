@@ -23,8 +23,6 @@ if((isset($_GET['act']))&&($_GET['act']!="")){
         $iddanhmuc=0;
         }
  
-       $dssp=loadall_sanpham($kyw,$iddanhmuc);
-       $tendm=load_tendm($iddanhmuc);
        include "page/sanpham.php";
         break;
 

@@ -37,4 +37,9 @@ function loadall_thongke(){
    $listthongke=pdo_query($sql);
    return $listthongke;
 }
+function delete_taikhoan($id)
+{
+   $sql = "delete from taikhoan where id=" . $id;
+   pdo_execute($sql);
+}
 ?>

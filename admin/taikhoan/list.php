@@ -1,7 +1,4 @@
 
-
-
-
           <div class="main-content">
   <div class="page-content">
     <div class="container-fluid">
@@ -22,13 +19,13 @@
                     <th>Địa chỉ</th>
                     <th>Số điện thoại</th>
                     <th>Vai trò</th>
+                    <th>Thao tác</th>
                   </tr>
                   <?php 
                   $i = 1;
                   foreach (loadall_taikhoan() as $nguoidung) {
                     extract($nguoidung);
-                    $suadm = "index.php?act=suadm&id=" . $id;
-                    $xoadm = "index.php?act=xoadm&id=" . $id;
+                    $xoatk = "index.php?act=xoatk&id=" . $id;
                     echo '<tr>
                     <td>' . $i++ . '</td>
                     <td>' . $tentk . '</td>
@@ -37,6 +34,9 @@
                     <td>' . $diachi . '</td>
                     <td>' . $sdt . '</td>
                      <td>' . $role . '</td>
+                     <td>
+                   <a href="' . $xoatk . '" class="btn btn-sm btn-danger mb-1"><i class="fas fa-trash"></i></a>
+                   </td>
                 </tr>';
                   }
                   ?>

@@ -139,7 +139,7 @@
                                 <ul>
                                     <li class="active"><a href="/duan1/nam/index.php">Trang chủ</a></li>
                                     <li><a href="/duan1/nam/page/gioithieu.php">Câu chuyện thương hiệu</a></li>
-                                    <li><a href="/duan1/nam/page/doitra.php">Phương tiện truyền thông</a></li>
+                                    <li><a href="/duan1/nam/page/doingu.php">Đội ngũ</a></li>
                                     <li><a href="/duan1/nam/page/lienhe.php">Liên hệ</a></li>
                                 </ul>
                             </nav>

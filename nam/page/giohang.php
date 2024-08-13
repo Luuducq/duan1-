@@ -115,15 +115,6 @@ require('../include/header.php');
                     <div class="cart-summary-wrap">
                         <h4>Phương thức thanh toán</h4>
                         <div class="custom-control custom-radio d-flex mb-0">
-                            <input type="radio" name="PaymentMothod" id="banking" class="custom-control-input"
-                                value="Chuyển Khoản Ngân Hàng" checked style="margin-right:15px">
-                            <label for="banking" class="custom-control-label ManhDev-Label-Payment"><i
-                                    class="fa-solid fa-money-check-dollar" style="font-size:20px"></i><span
-                                    style="font-size: 20px;margin-left:15px">Chuyển Khoản Ngân
-                                    Hàng</span></label>
-                        </div>
-
-                        <div class="custom-control custom-radio d-flex mb-0">
                             <input type="radio" name="PaymentMothod" id="tainha" class="custom-control-input"
                                 value="Thanh toán tại nhà" checked style="margin-right:15px">
                             <label for="tainha" class="custom-control-label "><i class="fa-solid fa-building-columns"

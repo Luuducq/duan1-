@@ -17,7 +17,7 @@
 							<nav class="category-menu mb-40">
 								<ul>
 									<?php
-									foreach (pdo_query("select *from danhmuc order by id desc") as $dm) {
+									foreach (pdo_query("SELECT * FROM danhmuc order by id desc") as $dm) {
 										extract($dm);
 										$linkdm = "index.php?act=sanpham&iddanhmuc=" . $id;
 										echo '<li>
@@ -74,7 +74,7 @@
 		<div class="row mb-3">
 			<div class="col-lg-12">
 				<div class="block-title">
-					<h2><?= pdo_query_one("select * from `danhmuc` where `id` = '" . $_GET['iddanhmuc'] . "' ")['tendanhmuc']; ?></h2>
+					<h2><?= pdo_query_one("SELECT * FROM `danhmuc` where `id` = '" . $_GET['iddanhmuc'] . "' ")['tendanhmuc']; ?></h2>
 				</div>
 			</div>
 			<div class="row">
@@ -83,7 +83,7 @@
 					<div class="single-latest-product">
 						<div class="product-image">
 							<a href="/duan1/nam/page/spct.php?id=<?= $product['id'] ?>">
-								<img width="250" height="250" src="../upload/<?= $product['image'] ?>" class="img-fluid" alt="">
+								<img width="250" height="250" src="/duan1/upload/<?= $product['image'] ?>" class="img-fluid" alt="">
 							</a>
 						</div>
 						<div class="product-description">
