@@ -135,7 +135,10 @@ if (isset($_GET['act'])) {
             break;
 
 
+            case 'ctdh':
 
+                include "donhang/ctdonhang.php";
+                break;
 
 
         case 'dstt':
