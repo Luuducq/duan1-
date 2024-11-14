@@ -9,19 +9,19 @@
 <!-- Full-width images with number and caption text -->
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
-  <img src="image/slisow1.jpg" style="width:100%">
+  <img src="view/image/banner1.jpg" style="width:100%">
   <div class="text">Caption Text</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
-  <img src="image/slisow2.jpg" style="width:100%">
+  <img src="view/image/banner2.jpg" style="width:100%">
   <div class="text">Caption Two</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
-  <img src="image/slisow3.jpg" style="width:100%">
+  <img src="view/image/banner3.jpg" style="width:100%">
   <div class="text">Caption Three</div>
 </div>
 
@@ -40,38 +40,42 @@
             </div>
         </div>
         <div class="row">
-<?php
+        <?php
 $i=0;
 foreach ($spnew as  $sp) {
   extract($sp);
   $linksp="index.php?act=sanphamct&idsp=".$id;
   $hinh= $img_path.$image;
   if(($i==2)||($i==5)||($i==8)||($i==11)){
-    $mr="";  
-}else{
-    $mr="mr";
-}
+      $mr="";  
+  }else{
+      $mr="mr";
+  }
 
 
   echo '<div class="boxsp '.$mr.'">';
-  echo '  <img src="'. $hinh.'" alt="" width="160px" height="160px">';
-  echo '  <p>'.$gia.'VND</p>';
+  echo '  <img src="'. $hinh.'" alt="" width="140px" height="140px">';
+  echo '  <p>'.$gia.'</p>';
   echo '  <a href="'.$linksp.'">'.$tensp.'</a>';
   echo '  <div class="kk">';
 
+  // Kiểm tra xem session đã được khởi động chưa
+  
+
+  // Kiểm tra xem người dùng đã đăng nhập chưa
   if (isset($_SESSION['tentk'])) {
     echo '    <form action="index.php?act=addtocart" method="post">';
     echo '      <input type="hidden" name="id" value="'.$id.'">';
     echo '      <input type="hidden" name="tensp" value="'.$tensp.'">';
     echo '      <input type="hidden" name="image" value="'.$image.'">';
     echo '      <input type="hidden" name="gia" value="'.$gia.'">';
-    echo '      <input type="submit" name="addtocart" value="&#128722; Thêm vào giỏ hàng">';
+    echo '      <input type="submit" name="addtocart" value="Thêm vào giỏ hàng">';
     echo '    </form>';
   }
 
   echo '  </div>';
   echo '</div>';
-  $i++;
+  $i+=1;
 }
 ?> 
         </div>

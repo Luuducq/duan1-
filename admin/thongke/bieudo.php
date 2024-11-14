@@ -32,7 +32,8 @@ function drawChart() {
   chart.draw(data, options);
 }
 </script>
-
-
-
 </div>
+
+
+
+

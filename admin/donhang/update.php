@@ -1,38 +1,83 @@
-<?php
-    if(is_array($bill)){
-        extract($bill);
-    }
-    
-?>
-    <div class="row">
-            <div class="row fromtitle"><h1>Cập nhật tình trạng đơn hàng</h1></div>
-            <div class="row ">
-                                       <h1>Ghi chú:</h1>
-                                       <h1>0: Đơn hàng mới</h1>
-                                       <h1>1: Đang xử lý</h1>
-                                       <h1>2: Đang giao hàng</h1>
-                                       <h1>3: Hoàn tất</h1>
-            </div>
-            <div class="row fromcontent">
-            <form action="index.php?act=updatedh&id=<?=$id?>" method="post" >
-                                
-                 <div class="row mb10">
-                    Tình trạng đơn hàng mới :
-                    <input type="text" name="billstatus" value="<?=$billstatus?>" >
-                 </div>
-                
-                 <div class="row mb10">
-                  <input type="hidden" name="id" value="<?=$id?>">
-                   <input type="submit" name="capnhat" value="Cập nhật">
-                   <input type="reset" value="Nhập lại">
-                   <a href="index.php?act=donhang"><input type="button" value="Danh sách"></a>
+<?php $rowww = pdo_query_one("SELECT * FROM `bill` WHERE `id` = " . $_GET['id']); ?>
+<div class="main-content">
+    <div class="page-content">
+        <div class="container-fluid">
+            <div class="">
+                <div class="fromtitle">
+                    <h4>Cập nhật tình trạng đơn hàng</h4>
+                </div>
+                <div class="fromcontent">
+                    <form action="" method="post">
 
-                 </div>
-                 <?php
-                  if(isset($thongbao)&&($thongbao!="")) echo $thongbao;
-                 ?>
-                 
-               </form>
+                        <div class="from-group mb-2">
+                            Tình trạng đơn hàng mới :
+                            <select name="status" id="" class="form-control">
+
+                                <?php if ($rowww['billstatus'] == 0) { ?>
+                                <option value="0" <?php if($rowww['billstatus'] == "0") { echo "selected"; } ?>>Đơn hàng
+                                    mới</option>
+                                <option value="1" <?php if($rowww['billstatus'] == "1") { echo "selected"; } ?>>Đang xử
+                                    lý</option>
+                                <option value="2" <?php if($rowww['billstatus'] == "2") { echo "selected"; } ?>>Đang
+                                    giao hàng</option>
+                                <option value="3" <?php if($rowww['billstatus'] == "3") { echo "selected"; } ?>>Đã giao
+                                </option>
+                                <option value="4" <?php if($rowww['billstatus'] == "4") { echo "selected"; } ?>>Hoàn đơn
+                                </option>
+                                <?php } 
+                                
+                                else if ($rowww['billstatus'] == 1) { ?>
+                                <option value="1" <?php if($rowww['billstatus'] == "1") { echo "selected"; } ?>>Đang xử
+                                    lý</option>
+                                <option value="2" <?php if($rowww['billstatus'] == "2") { echo "selected"; } ?>>Đang
+                                    giao hàng</option>
+                                <option value="3" <?php if($rowww['billstatus'] == "3") { echo "selected"; } ?>>Đã giao
+                                </option>
+                                <option value="4" <?php if($rowww['billstatus'] == "4") { echo "selected"; } ?>>Hoàn đơn
+                                </option>
+                                <?php } 
+                                    
+                                    else if ($rowww['billstatus'] == 2) { ?>
+
+                                <option value="2" <?php if($rowww['billstatus'] == "2") { echo "selected"; } ?>>Đang
+                                    giao hàng</option>
+                                <option value="3" <?php if($rowww['billstatus'] == "3") { echo "selected"; } ?>>Đã giao
+                                </option>
+                                <option value="4" <?php if($rowww['billstatus'] == "4") { echo "selected"; } ?>>Hoàn đơn
+                                </option>
+                                <?php } 
+                                    
+                                    else if ($rowww['billstatus'] == 3) { ?>
+
+                                <option value="3" <?php if($rowww['billstatus'] == "3") { echo "selected"; } ?>>Đã giao
+                                </option>
+                                <option value="4" <?php if($rowww['billstatus'] == "4") { echo "selected"; } ?>>Hoàn đơn
+                                </option>
+                                <?php } else {
+                                    ?>
+                                <option value="4" <?php if($rowww['billstatus'] == "4") { echo "selected"; } ?>>Hoàn đơn
+                                </option>
+                                <?php } ?>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary" name="capnhat">Cập nhật</button>
+                            <a href="index.php?act=qldh"><input type="button" class="btn btn-info"
+                                    value="Danh sách"></a>
+
+                        </div>
+                        <?php
+                        if(isset($_POST['capnhat'])) {
+                            pdo_query("UPDATE `bill` SET `billstatus` = '".$_POST['status']."' WHERE `id` = '".$rowww['id']."' ");
+                            echo '<script>location.href=""</script>';
+                        }
+                        ?>
+
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+</div>
+</div>

@@ -2,7 +2,7 @@
 function insert_taikhoan($email,$pass,$tentk){
     $sql= "insert into taikhoan(tentk,pass,email)
      values('$email','$pass','$tentk')";
-    pdo_execute($sql)   ;
+         ;
  }
  function check_tentk($tentk,$pass){
     $sql="select *from taikhoan where tentk='".$tentk."' AND pass='".$pass."'" ;
@@ -36,5 +36,10 @@ function loadall_thongke(){
    $sql.=" group by danhmuc.id order by danhmuc.id desc";
    $listthongke=pdo_query($sql);
    return $listthongke;
+}
+function delete_taikhoan($id)
+{
+   $sql = "delete from taikhoan where id=" . $id;
+   pdo_execute($sql);
 }
 ?>

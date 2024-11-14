@@ -4,29 +4,33 @@
     }
       
     ?>
-    <div class="row">
-            <div class="row fromtitle"><h1>Cập nhật loại hàng</h1></div>
-            <div class="row fromcontent">
-               <form action="index.php?act=updatedm" method="post">
-                <div class="row mb10">
-                   Mã loại
-                   <input type="text" name="maloai" disabled>
-                </div>
-                 <div class="row mb10">
+    <div class="main-content">
+   <div class="page-content">
+      <div class="container-fluid">
+         <div class="row mb-3 pb-1">
+            <div class="col-md-12">
+               <div class="fromtitle">
+                  <h2>Cập nhật danh mục</h2>
+               </div>
+               <div class="fromcontent">
+               <?php
+               if (isset($thongbao) && ($thongbao != "")) echo '<div class="alert alert-primary mb-3">'.$thongbao.'</div>';
+               ?>
+               
+                  <form action="index.php?act=updatedm" method="post">
+                  <input type="hidden" name="id" value="<?php if(isset($id)&&($id>0)) echo $id; ?>">
+                  <div class="mb-3">
                     Tên loại
-                    <input type="text" name="tenloai" value="<?php if(isset($tendanhmuc)&&($tendanhmuc!="")) echo $tendanhmuc; ?>" >
+                    <input type="text" class="form-control" name="tenloai" value="<?php if(isset($tendanhmuc)&&($tendanhmuc!="")) echo $tendanhmuc; ?>" >
                  </div>
-                 <div class="row mb10">
-                    <input type="hidden" name="id" value="<?php if(isset($id)&&($id>0)) echo $id; ?>">
-                   <input type="submit" name="capnhat" value="Cập nhật">
-                   <input type="reset" value="Nhập lại">
-                   <a href="index.php?act=dshh"><input type="button" value="Danh sách"></a>
-                 </div>
-                 <?php
-                  if(isset($thongbao)&&($thongbao!="")) echo $thongbao;
-                 ?>
-                 
-               </form>
+                     <div class="mb-3">
+                        <button type="submit" name="capnhat" class="btn btn-primary mb-3">Cập nhật</button>
+                        <input type="reset" value="Nhập lại" class="btn btn-danger mb-3">
+                        <a href="index.php?act=dsdm" class="btn btn-info mb-3">Danh sách</a>
+                     </div>
+                  </form>
+               </div>
             </div>
-        </div>
-    </div>
+         </div>
+      </div>
+   </div>
